@@ -20,11 +20,17 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack{
-            ScrollView(.vertical, showsIndicators: false){
-                
-            }
-            .refreshable {
-                
+            VStack{
+                if let myProfile{
+                    ProfileContentView(user: myProfile)
+                        .refreshable {
+                            //refresh user data
+                            self.myProfile = nil
+                            await fetchUserData()
+                        }
+                }else{
+                    ProgressView()
+                }
             }
             .navigationTitle("My Profile")
             .toolbar{
@@ -44,8 +50,20 @@ struct ProfileView: View {
                 LoadingView(show: $isLoading)
             }
             .alert(errorMessage, isPresented: $showError, actions: {})
-            
+            .task {
+                if myProfile != nil {return}
+                //initial fetch
+                await fetchUserData()
+            }
         }
+    }
+    
+    func fetchUserData()async{
+        guard let userUID = Auth.auth().currentUser?.uid else{return}
+        guard let user = try? await Firestore.firestore().collection("Users").document(userUID).getDocument(as: User.self) else{return}
+        await MainActor.run(body: {
+            myProfile = user
+        })
     }
     
     func logout(){

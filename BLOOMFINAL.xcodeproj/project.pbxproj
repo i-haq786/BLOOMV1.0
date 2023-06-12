@@ -24,6 +24,7 @@
 		3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD822A36E9AF00886CE4 /* Views + Extensions.swift */; };
 		3811CD862A36F69800886CE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD852A36F69800886CE4 /* HomeView.swift */; };
 		3811CD882A36F94100886CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD872A36F94100886CE4 /* ProfileView.swift */; };
+		3811CD8A2A37047C00886CE4 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD892A37047C00886CE4 /* ProfileContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3811CD822A36E9AF00886CE4 /* Views + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views + Extensions.swift"; sourceTree = "<group>"; };
 		3811CD852A36F69800886CE4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3811CD872A36F94100886CE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3811CD892A37047C00886CE4 /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				3811CD852A36F69800886CE4 /* HomeView.swift */,
 				3811CD872A36F94100886CE4 /* ProfileView.swift */,
+				3811CD892A37047C00886CE4 /* ProfileContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				3811CD7C2A36C7E200886CE4 /* User.swift in Sources */,
 				3811CD882A36F94100886CE4 /* ProfileView.swift in Sources */,
+				3811CD8A2A37047C00886CE4 /* ProfileContentView.swift in Sources */,
 				3811CD702A35022100886CE4 /* LoginView.swift in Sources */,
 				3811CD582A34ED4500886CE4 /* ContentView.swift in Sources */,
 				3811CD812A36E8BC00886CE4 /* RegisterView.swift in Sources */,
