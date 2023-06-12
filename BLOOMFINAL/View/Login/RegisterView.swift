@@ -59,8 +59,9 @@ struct RegisterView: View{
                         .hAlign(.center)
                         .fillView(.black)
                 }
-                .disableWithOpacity(userName == "" || password == "" || emailID == "" || phoneNum == "" )
                 .padding(.top)
+                .disableWithOpacity(userName == "" || password == "" || emailID == "" || phoneNum == "" )
+                
             }
             
             HStack{
@@ -76,12 +77,12 @@ struct RegisterView: View{
             .font(.callout)
             .vAlign(.bottom)
         }
-        .overlay(content: {
-            LoadingView(show: $isLoading)
-        })
         .vAlign(.top)
         .padding(15)
         .alert(errorMessage, isPresented: $showError, actions: {})
+        .overlay(content: {
+            LoadingView(show: $isLoading)
+        })
     }
     
     func registerUser(){
