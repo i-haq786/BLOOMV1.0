@@ -26,6 +26,11 @@ struct HomeView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Explore")
                 }
+            Text("Host")
+                .tabItem{
+                    Image(systemName: "sparkle")
+                    Text("Host")
+                }
             ProfileView()
                 .tabItem{
                     Image(systemName: "person")

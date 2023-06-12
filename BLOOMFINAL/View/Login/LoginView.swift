@@ -36,12 +36,12 @@ struct LoginView: View {
             
             VStack(spacing: 12){
                 TextField("Email", text: $emailID)
-                    .border(1, .black)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.top, 25)
                 
                 SecureField( "Password", text: $password)
                     .textContentType (.emailAddress )
-                    .border(1, .black)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button ("Reset password?", action: resetPassword)
                     .font (.callout)

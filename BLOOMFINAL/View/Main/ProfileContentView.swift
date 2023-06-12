@@ -10,6 +10,20 @@ import SwiftUI
 struct ProfileContentView: View {
     var user: User
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical, showsIndicators: false){
+            LazyVStack(alignment: .leading){
+                VStack(alignment: .leading ,spacing: 6) {
+                    Text(user.userName)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    Text(user.userEmail)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                    Text(user.userNumber)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }.padding(.leading)
+            }.hAlign(.leading)
+        }
     }
 }
