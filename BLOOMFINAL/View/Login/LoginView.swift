@@ -71,11 +71,11 @@ struct LoginView: View {
             .font(.callout)
             .vAlign(.bottom)
         }
+        .vAlign(.top)
+        .padding (15)
         .overlay(content: {
             LoadingView(show: $isLoading)
         })
-        .vAlign(.top)
-        .padding (15)
         .fullScreenCover(isPresented: $createAccount){
             RegisterView()
         }
