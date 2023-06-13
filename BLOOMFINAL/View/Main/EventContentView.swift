@@ -30,7 +30,7 @@ struct EventContentView: View {
                         Events()
                     }
                 }
-            }
+            }.padding()
             
         } .refreshable {
             isFetching = true
@@ -47,7 +47,12 @@ struct EventContentView: View {
     @ViewBuilder
     func Events()->some View{
         ForEach(events){event in
-            EventCardView()
+            EventCardView(event: event){updatedEvent in
+                
+            }onDelete: {
+                
+            }
+            Divider()
         }
     }
     

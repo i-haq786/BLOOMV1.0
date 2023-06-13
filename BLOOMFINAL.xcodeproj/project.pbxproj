@@ -27,6 +27,7 @@
 		3811CD8A2A37047C00886CE4 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD892A37047C00886CE4 /* ProfileContentView.swift */; };
 		3811CD8C2A37159F00886CE4 /* CreateNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD8B2A37159F00886CE4 /* CreateNewEvent.swift */; };
 		3811CD8E2A3715BB00886CE4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD8D2A3715BB00886CE4 /* Event.swift */; };
+		38B298112A38C50500F9A559 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 38B298102A38C50500F9A559 /* SDWebImageSwiftUI */; };
 		38CCC48D2A37B16300E350C9 /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 38CCC48C2A37B16300E350C9 /* MapItemPicker */; };
 		38CCC48F2A385D6800E350C9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCC48E2A385D6800E350C9 /* ExploreView.swift */; };
 		38CCC4912A385F7400E350C9 /* HostEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCC4902A385F7400E350C9 /* HostEventView.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B298112A38C50500F9A559 /* SDWebImageSwiftUI in Frameworks */,
 				3811CD662A3500BC00886CE4 /* FirebaseAuth in Frameworks */,
 				3811CD682A3500BC00886CE4 /* FirebaseFirestore in Frameworks */,
 				38CCC48D2A37B16300E350C9 /* MapItemPicker in Frameworks */,
@@ -187,6 +189,7 @@
 				3811CD752A36BE0400886CE4 /* FirebaseFirestoreSwift */,
 				3811CD772A36BE0C00886CE4 /* FirebaseStorage */,
 				38CCC48C2A37B16300E350C9 /* MapItemPicker */,
+				38B298102A38C50500F9A559 /* SDWebImageSwiftUI */,
 			);
 			productName = BLOOMFINAL;
 			productReference = 3811CD522A34ED4500886CE4 /* BLOOMFINAL.app */;
@@ -220,6 +223,7 @@
 				3811CD642A3500BC00886CE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3811CD712A35AF7400886CE4 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 				38CCC48B2A37B16300E350C9 /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */,
+				38B2980F2A38C50500F9A559 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 3811CD532A34ED4500886CE4 /* Products */;
 			projectDirPath = "";
@@ -482,6 +486,14 @@
 				minimumVersion = 0.10.1;
 			};
 		};
+		38B2980F2A38C50500F9A559 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		38CCC48B2A37B16300E350C9 /* XCRemoteSwiftPackageReference "swiftui-map-item-picker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-map-item-picker";
@@ -517,6 +529,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3811CD642A3500BC00886CE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		38B298102A38C50500F9A559 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38B2980F2A38C50500F9A559 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		38CCC48C2A37B16300E350C9 /* MapItemPicker */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,15 +6,38 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct EventCardView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-struct EventCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventCardView()
+    var event: Event
+    var onUpdate: (Event)->()
+    var onDelete: ()->()
+
+    var body: some View {
+        VStack{
+            Text(event.name)
+                .font(.body)
+                .fontWeight(.semibold)
+            Text(event.date.formatted(date: .numeric, time: .shortened))
+                .font(.caption)
+                .foregroundColor(.gray)
+            Text(event.description)
+                .textSelection(.enabled)
+                .padding(.vertical,8)
+            
+            if let eventImgURL = event.imgURL{
+                GeometryReader{
+                    let size = $0.size
+                    WebImage(url: eventImgURL)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: size.width, height: size.height)
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                }
+                .frame(height: 200)
+            }
+        }
+        .hAlign(.leading)
     }
 }

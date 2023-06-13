@@ -12,8 +12,8 @@ struct Event: Identifiable,Codable{
     @DocumentID var id: String?
 
     var name: String
-    //var imageURL: URL?
     var imgID: String = ""
+    var imgURL: URL?
     var venue: String
     var description: String
     var date: Date
@@ -26,9 +26,9 @@ struct Event: Identifiable,Codable{
     enum CodingKeys: CodingKey {
         case id
         case imgID
+        case imgURL
         case venue
         case name
-        //case imageURL
         case description
         case date
   //      case interests
