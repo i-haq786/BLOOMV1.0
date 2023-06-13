@@ -18,6 +18,7 @@ struct EventContentView: View {
             LazyVStack{
                 if isFetching{
                     ProgressView()
+                        .padding(.top, 30)
                 }
                 else{
                     if events.isEmpty{
@@ -25,14 +26,13 @@ struct EventContentView: View {
                             .font(.caption)
                             .foregroundColor(.gray)
                             .padding()
-                        
                     }else{
                         Events()
                     }
                 }
-            }.padding()
-            
-        } .refreshable {
+            }
+        }
+        .refreshable{
             isFetching = true
             events = []
             await fetchEvents()
@@ -41,6 +41,7 @@ struct EventContentView: View {
             guard events.isEmpty else{return}
             await fetchEvents()
         }
+        
     }
     
     //displaying fetched events
