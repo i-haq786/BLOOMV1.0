@@ -21,12 +21,12 @@ struct HomeView: View {
                     Image(systemName: "ticket")
                     Text("Passes")
                 }
-            Text("Explore")
+            ExploreView()
                 .tabItem{
                     Image(systemName: "magnifyingglass")
                     Text("Explore")
                 }
-            Text("Host")
+            HostEventView()
                 .tabItem{
                     Image(systemName: "sparkle")
                     Text("Host")

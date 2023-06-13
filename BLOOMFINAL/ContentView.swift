@@ -12,15 +12,15 @@ struct ContentView: View {
     @AppStorage("log_status") var logStatus: Bool = false
     
     var body: some View {
-//        //redirecting users based on log status
-//        if logStatus{
-//            HomeView()
-//        }else{
-//            LoginView()
-//        }
-        CreateNewEvent{_ in
-            
+        //redirecting users based on log status
+        if logStatus{
+            HomeView()
+        }else{
+            LoginView()
         }
+//        CreateNewEvent{_ in
+//
+//        }
     }
 }
 

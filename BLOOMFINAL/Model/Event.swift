@@ -11,12 +11,13 @@ import FirebaseFirestoreSwift
 struct Event: Identifiable,Codable{
     @DocumentID var id: String?
 
-    var text: String
-    var imageURL: URL?
-    var eventID: String = ""
-    var description: String = ""
-    var date: Date = Date()
-    var interests: [String] = []
+    var name: String
+    //var imageURL: URL?
+    var imgID: String = ""
+    var venue: String
+    var description: String
+    var date: Date
+   // var interests: [String]
     
     // MARK: Basic User Info
     var userName: String
@@ -24,11 +25,13 @@ struct Event: Identifiable,Codable{
     
     enum CodingKeys: CodingKey {
         case id
-        case eventID
-        case text
-        case imageURL
+        case imgID
+        case venue
+        case name
+        //case imageURL
+        case description
         case date
-        case interests
+  //      case interests
         case userName
         case userUID
     }
