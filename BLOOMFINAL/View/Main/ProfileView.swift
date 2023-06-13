@@ -21,8 +21,21 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                if let myProfile{
-                    ProfileContentView(user: myProfile)
+                if let myProfile{                    
+                        VStack(alignment: .leading ,spacing: 6) {
+                            Text(myProfile.userName)
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Text(myProfile.userEmail)
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text(myProfile.userNumber)
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.leading)
+                        .hAlign(.leading)
+                        .vAlign(.top)
                         .refreshable {
                             //refresh user data
                             self.myProfile = nil
