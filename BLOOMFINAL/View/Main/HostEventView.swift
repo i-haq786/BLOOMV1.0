@@ -27,7 +27,9 @@ struct HostEventView: View {
                 .padding (15)
             }
             .fullScreenCover(isPresented: $createNewEvent){
-                CreateNewEvent{event in}
+                CreateNewEvent{event in
+                    
+                }
             }
     }
 }

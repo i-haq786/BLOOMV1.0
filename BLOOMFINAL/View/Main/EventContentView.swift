@@ -31,12 +31,13 @@ struct EventContentView: View {
                     }
                 }
             }
-            .refreshable {
-                isFetching = true
-                events = []
-                await fetchEvents()
-            }
-        }.task{
+           
+        } .refreshable {
+            isFetching = true
+            events = []
+            await fetchEvents()
+        }
+        .task{
             guard events.isEmpty else{return}
             await fetchEvents()
         }
@@ -55,7 +56,7 @@ struct EventContentView: View {
         do{
             var query: Query!
             query = Firestore.firestore().collection("Events")
-                .order(by: "eventTime", descending: true)
+                .order(by: "date", descending: true)
                 .limit(to: 20)
             let docs = try await query.getDocuments()
             
