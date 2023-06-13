@@ -25,61 +25,132 @@ struct LoginView: View {
     @AppStorage("user_UID") var userUID: String = ""
     var body: some View {
         
-        VStack(spacing: 10){
-            Text ("BLOOM")
-                .font (.largeTitle.bold ())
-                .hAlign( .leading)
-            
-            Text ("Login")
-                .font (.title3)
-                .hAlign(.leading)
-            
-            VStack(spacing: 12){
-                TextField("Email", text: $emailID)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.top, 25)
+      ZStack {
+            LoginBackgroundView()
+            VStack(spacing: 10){
+                Text ("BLOOM")
+                    .font (.largeTitle.bold ())
+                    .hAlign( .trailing)
+                    .padding(.top, 30)
                 
-                SecureField( "Password", text: $password)
-                    .textContentType (.emailAddress )
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Image("Image 15")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 300, height: 300)
                 
-                Button ("Reset password?", action: resetPassword)
-                    .font (.callout)
-                    .fontWeight (.medium)
-                    .tint (.black)
-                    .hAlign(.trailing)
+//                Text ("Login")
+//                    .font (.title3)
+//                    .hAlign(.leading)
                 
-                Button(action: loginUser){
-                    Text("Sign in")
-                        .foregroundColor(.white)
-                        .hAlign(.center)
-                        .fillView(.black)
+                Text ("Login to your account")
+                    .font (.title3.bold())
+                    .hAlign(.leading)
+                    .padding(.bottom, 20)
+                
+                VStack(spacing: 12){
+                    ZStack(alignment: .topLeading) {
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color("myGray"), lineWidth: 2)
+                            .frame(width: 370, height: 55)
+                        
+                        Text ("Email ID")
+                            .font (.title3)
+                            .fontWeight(.medium)
+                            .frame(width: 120, height: 20)
+                            .background(Color("background"))
+                            .offset(x:20, y: -10)
+                        
+                        TextField("example@email. com", text: $emailID)
+                            .padding(.top, 15)
+                            .padding(.leading, 30)
+                            .autocapitalization(.none)
+                    }
+                    .padding(.bottom, 20)
+                    
+//                    TextField("Email", text: $emailID)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .padding(.top, 25)
+//                        .autocapitalization(.none)
+                    
+                    ZStack(alignment: .topLeading) {
+                        
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(Color("myGray"), lineWidth: 2)
+                            .frame(width: 370, height: 55)
+                        
+                        Text ("Password")
+                            .font (.title3)
+                            .fontWeight(.medium)
+                            .frame(width: 120, height: 20)
+                            .background(Color("background"))
+                            .offset(x:20, y: -10)
+                        
+                        SecureField( "***********", text: $password)
+                            .textContentType (.emailAddress)
+                            .padding(.top, 19)
+                            .padding(.leading, 30)
+                            .autocapitalization(.none)
+                    }
+//                    SecureField( "Password", text: $password)
+//                        .textContentType (.emailAddress )
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .autocapitalization(.none)
+                    
+                    Button ("Reset password?", action: resetPassword)
+                        .foregroundColor(Color("accent"))
+                        .font(.callout)
+                        .fontWeight (.medium)
+                        .tint (.black)
+                        .hAlign(.trailing)
+                    
+//                    Button ("Reset password?", action: resetPassword)
+//                        .font (.callout)
+//                        .fontWeight (.medium)
+//                        .tint (.black)
+//                        .hAlign(.trailing)
+                    
+                    Button(action: loginUser){
+                        Text("Login")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("background"))
+                            .hAlign(.center)
+                            .fillView(Color("primary"))
+                            .cornerRadius(15)
+                    }
+                    .frame(width: 130)
+                    
+//                    Button(action: loginUser){
+//                        Text("Login")
+//                            .foregroundColor(.white)
+//                            .hAlign(.center)
+//                            .fillView(.black)
+//                    }
+//                    .padding(.top)
                 }
-                .padding(.top)
-            }
-            
-            HStack{
-            Text ("Don't have an account?")
-                    .foregroundColor(.gray)
                 
-                Button ("Register Now"){
-                    createAccount.toggle()
+                VStack{
+                Text ("Don't have an account?")
+                        .foregroundColor(.gray)
+                    
+                    Button ("Register Now"){
+                        createAccount.toggle()
+                    }
+                    .fontWeight (.bold)
+                    .foregroundColor(Color("accent"))
                 }
-                .fontWeight (.bold)
-                .foregroundColor (.black)
+                .font(.callout)
+//                .vAlign(.bottom)
             }
-            .font(.callout)
-            .vAlign(.bottom)
-        }
-        .vAlign(.top)
-        .padding (15)
-        .overlay(content: {
-            LoadingView(show: $isLoading)
-        })
-        .fullScreenCover(isPresented: $createAccount){
-            RegisterView()
-        }
+            .vAlign(.top)
+            .padding (15)
+            .overlay(content: {
+                LoadingView(show: $isLoading)
+            })
+            .fullScreenCover(isPresented: $createAccount){
+                RegisterView()
+            }
         .alert(errorMessage, isPresented: $showError, actions: {})
+        }
     }
     
     func loginUser(){
@@ -128,6 +199,30 @@ struct LoginView: View {
             showError.toggle()
             isLoading = false
         })
+    }
+}
+
+struct LoginBackgroundView: View {
+    
+    var body: some View {
+        ZStack(alignment: .topLeading){
+            Image("Image 20")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180)
+                .offset(x: -80,y: -290)
+            
+            Image("Image 29")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 250, height: 300)
+                .rotationEffect(Angle(degrees: -25))
+                .offset(x: 180, y: 420)
+                
+          
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .background(Color("background"))
     }
 }
 
