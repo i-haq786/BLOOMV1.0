@@ -31,7 +31,7 @@ struct EventContentView: View {
                     }
                 }
             }
-           
+            
         } .refreshable {
             isFetching = true
             events = []
@@ -47,7 +47,7 @@ struct EventContentView: View {
     @ViewBuilder
     func Events()->some View{
         ForEach(events){event in
-            Text(event.name)
+            EventCardView()
         }
     }
     
