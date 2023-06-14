@@ -9,18 +9,19 @@ import SwiftUI
 struct PassView: View {
     let data: PassData
 
-    @State private var poster: Image = Image("Image 10")
-    @State private var name: String = "Devfest 2022"
-    @State private var organizer: String = "GDG Chennai"
-    @State private var time: String = "1:30 PM"
-    @State private var day: String = "SAT, 11 July"
-    @State private var venue: String = "Infosys, Shollinganallur"
+      @State private var poster: Image = Image("Image 44")
     
-    @State private var bookingId: String = "IXJK000457865CJ83"
-    @State private var topicName: String = "Introduction to Flutter"
-    @State private var stacks: String = "State Management, API Integration"
-    @State private var personsCount: Int = 2
-    @State private var cost : Int = 620
+//    @State private var name: String = "Devfest 2022"
+//    @State private var organizer: String = "GDG Chennai"
+//    @State private var time: String = "1:30 PM"
+//    @State private var day: String = "SAT, 11 July"
+//    @State private var venue: String = "Infosys, Shollinganallur"
+//
+//    @State private var bookingId: String = "IXJK000457865CJ83"
+//    @State private var topicName: String = "Introduction to Flutter"
+//    @State private var stacks: String = "State Management, API Integration"
+//    @State private var personsCount: Int = 2
+//    @State private var cost : Int = 620
     
     
     var body: some View {
@@ -28,23 +29,25 @@ struct PassView: View {
             Image("Image 40")
                 .resizable()
                 .scaledToFit()
+               
             
             VStack{
                 
                 HStack {
                     HStack {
-                        poster
+                        data.poster
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 70, height: 70)
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
                         
                         VStack(alignment: .leading){
-                            Text("\(name)")
+                            Text("\(data.name)")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.bold)
                             
-                            Text("\(organizer)")
+                            Text("\(data.organizer)")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
@@ -59,17 +62,17 @@ struct PassView: View {
                     HStack {
                         
                         VStack(alignment: .center){
-                            Text("\(time)")
+                            Text("\(data.time)")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
                             
-                            Text("\(day)")
+                            Text("\(data.day)")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
                             
-                            Text("\(venue)")
+                            Text("\(data.venue)")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
@@ -85,17 +88,17 @@ struct PassView: View {
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.bold)
-                        Text("\(bookingId)")
+                        Text("\(data.bookingId)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.regular)
                         Spacer()
                         
-                        Text("\(topicName)")
+                        Text("\(data.topicName)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.bold)
-                        Text("(\(stacks))")
+                        Text("(\(data.stacks))")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.regular)
@@ -121,19 +124,19 @@ struct PassView: View {
                     } .frame(width: 220, height: 190)
                     
                     VStack {
-                        QRCodeGenerator(eventName: name, eventDate: day, eventTime: time, personsCount: personsCount)
-                        Text("\(personsCount) Person (s)")
+                        QRCodeGenerator(eventName: data.name, eventDate: data.day, eventTime: data.time, personsCount: data.personsCount)
+                        Text("\(data.personsCount) Person (s)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.bold)
-                        Text("Rs. \(cost)")
+                        Text("Rs. \(data.cost)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.regular)
                     }
                 }
-            }
-            .frame(width: 340, height: 290)
+            }.padding(10)
+            .frame(width: 320, height: 290)
             
         }
     }
