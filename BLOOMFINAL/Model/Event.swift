@@ -12,7 +12,7 @@ struct Event: Identifiable,Codable{
     @DocumentID var id: String?
 
     var name: String
-    var imgID: String = ""
+    var imgID: String?
     var imgURL: URL?
     var venue: String
     var description: String

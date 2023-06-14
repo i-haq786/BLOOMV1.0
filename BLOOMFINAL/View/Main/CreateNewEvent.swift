@@ -173,8 +173,10 @@ struct CreateNewEvent: View {
                 if let eventImage{
                     let _ = try await storageRef.putDataAsync(eventImage)
                     let downloadURL = try await storageRef.downloadURL()
-                    //event data without image
-                    let event = Event(name: eventName, imgID:imageReferenceID, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
+                    
+                  //event data without image
+                    let event = Event(name: eventName, imgID:imageReferenceID, imgURL: downloadURL, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
+
                     try await createDocumentAtFirebase(event)
                 }else{
                     //without images

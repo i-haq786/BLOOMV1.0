@@ -13,11 +13,13 @@ struct EventContentView: View {
     @Binding var events: [Event]
     @State var isFetching: Bool = true
     
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             LazyVStack{
                 if isFetching{
                     ProgressView()
+                        .padding(.top, 30)
                 }
                 else{
                     if events.isEmpty{
@@ -25,14 +27,14 @@ struct EventContentView: View {
                             .font(.caption)
                             .foregroundColor(.gray)
                             .padding()
-                        
                     }else{
                         Events()
                     }
                 }
-            }.padding()
-            
-        } .refreshable {
+            }
+            .padding(15)
+        }
+        .refreshable{
             isFetching = true
             events = []
             await fetchEvents()
@@ -42,7 +44,6 @@ struct EventContentView: View {
             await fetchEvents()
         }
     }
-    
     //displaying fetched events
     @ViewBuilder
     func Events()->some View{
@@ -55,7 +56,6 @@ struct EventContentView: View {
             Divider()
         }
     }
-    
     //fetching events
     func fetchEvents()async{
         do{
