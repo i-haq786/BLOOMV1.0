@@ -18,7 +18,7 @@ struct ReusableContentView: View {
     @State private var isFetching: Bool = true
     @State private var paginationDoc: QueryDocumentSnapshot?
     @State private var listenerRegistration: ListenerRegistration?
-
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             LazyVStack{
@@ -46,11 +46,11 @@ struct ReusableContentView: View {
                     }
                 }
                 startEventListeners() // Start Firestore listeners
-
+                
             }
             .onDisappear {
-                           stopEventListeners() // Stop Firestore listeners
-                       }
+                stopEventListeners() // Stop Firestore listeners
+            }
         }
         .refreshable {
             isFetching = true
@@ -102,18 +102,18 @@ struct ReusableContentView: View {
                 try? doc.data(as: Event.self)
             }
             if fetchedEvents.isEmpty {
-                        print("No events found")
+                print("No events found")
+            } else {
+                await MainActor.run {
+                    if events.isEmpty {
+                        events.append(contentsOf: fetchedEvents)
                     } else {
-                        await MainActor.run {
-                            if events.isEmpty {
-                                events.append(contentsOf: fetchedEvents)
-                            } else {
-                                events = fetchedEvents
-                            }
-                            paginationDoc = docs.documents.last
-                            isFetching = false
-                        }
+                        events = fetchedEvents
                     }
+                    paginationDoc = docs.documents.last
+                    isFetching = false
+                }
+            }
         }catch{
             print(error.localizedDescription)
         }
@@ -146,7 +146,7 @@ struct ReusableContentView: View {
         listenerRegistration?.remove()
         listenerRegistration = nil
     }
-
+    
     
 }
 

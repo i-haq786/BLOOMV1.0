@@ -225,7 +225,7 @@ struct ProfileBackgroundView: View {
             
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        .background(Color("background"))
+        .background(Color("background").edgesIgnoringSafeArea(.all))
     }
 }
 

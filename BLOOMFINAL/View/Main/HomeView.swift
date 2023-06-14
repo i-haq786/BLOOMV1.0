@@ -16,7 +16,7 @@ struct HomeView: View {
     var body: some View {
         //tab bar view
         TabView{
-            Text("Home")
+            LandingScreen()
                 .tabItem{
                     Image(systemName: "house")
                     Text("Home")
@@ -41,7 +41,8 @@ struct HomeView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-        }.tint(.black)
+        }.background(Color("background").edgesIgnoringSafeArea(.all))
+        .tint(.black)
     }
 }
 

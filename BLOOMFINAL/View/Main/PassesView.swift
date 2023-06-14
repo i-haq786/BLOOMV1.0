@@ -25,10 +25,7 @@ struct PassesView: View {
                        Spacer()
                    }.navigationTitle("Passes")
                 .padding( 10)
-            .background(Color("background"))
-            
-                
-                       
+                .background(Color("background").edgesIgnoringSafeArea(.all))
         }
        
     }

@@ -15,7 +15,7 @@ struct HostEventView: View {
     var body: some View {
         NavigationStack{
             ScrollView(.vertical, showsIndicators: false){
-               ReusableContentView( events: $recentEvents)
+                ReusableContentView( events: $recentEvents)
             }.navigationTitle("Hosted Events")
                 .padding()
                 .overlay(alignment: .bottomTrailing){
@@ -30,13 +30,15 @@ struct HostEventView: View {
                             .background(.black, in:Circle())
                     }
                     .padding (15)
+                    
                 }
                 .fullScreenCover(isPresented: $createNewEvent){
                     CreateNewEvent{event in
                         
                     }
-                }
+                } .background(Color("background").edgesIgnoringSafeArea(.all))
         }
+        
     }
 }
 

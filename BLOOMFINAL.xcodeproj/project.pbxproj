@@ -39,6 +39,7 @@
 		38E4B77F2A39AB230026A487 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E4B77E2A39AB230026A487 /* LaunchScreen.storyboard */; };
 		38E4B7812A39AF010026A487 /* PassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7802A39AF010026A487 /* PassesView.swift */; };
 		38E4B7832A39B01B0026A487 /* PassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7822A39B01B0026A487 /* PassData.swift */; };
+		38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7862A39C88E0026A487 /* LandingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		38E4B77E2A39AB230026A487 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38E4B7802A39AF010026A487 /* PassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesView.swift; sourceTree = "<group>"; };
 		38E4B7822A39B01B0026A487 /* PassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassData.swift; sourceTree = "<group>"; };
+		38E4B7862A39C88E0026A487 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				38E4B7792A3985850026A487 /* SearchEventView.swift */,
 				38E4B77B2A3990740026A487 /* ReusableContentView.swift */,
 				38E4B7802A39AF010026A487 /* PassesView.swift */,
+				38E4B7862A39C88E0026A487 /* LandingScreen.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				3811CD812A36E8BC00886CE4 /* RegisterView.swift in Sources */,
 				38CCC4912A385F7400E350C9 /* HostEventView.swift in Sources */,
 				38CCC48F2A385D6800E350C9 /* ExploreView.swift in Sources */,
+				38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */,
 				3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */,
 				38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */,
 				38CCC4932A386ACD00E350C9 /* EventContentView.swift in Sources */,
@@ -428,7 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TBCL3BV72X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -458,7 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TBCL3BV72X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

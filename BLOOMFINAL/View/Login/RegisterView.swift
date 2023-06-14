@@ -37,6 +37,11 @@ struct RegisterView: View{
                     .hAlign( .leading)
                     .padding(.top, 20)
                 
+                Image("Image 19")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 270, height: 270)
+                
                 Text ("Create Account")
                     .font (.title3.bold())
                     .hAlign(.leading)

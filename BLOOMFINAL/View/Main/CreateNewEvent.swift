@@ -144,7 +144,7 @@ struct CreateNewEvent: View {
             .padding(.horizontal,15)
             .padding(.vertical, 10)
         }
-        .background(Color("background"))
+        .background(Color("background").edgesIgnoringSafeArea(.all))
         .vAlign(.top)
         .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
         .onChange(of: photoItem){ newValue in

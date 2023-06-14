@@ -18,7 +18,7 @@ struct ExploreView: View {
                 
             }.navigationTitle("Events")
                 .padding()
-                .background(Color("background"))
+                .background(Color("background").edgesIgnoringSafeArea(.all))
         }
     }
 }
