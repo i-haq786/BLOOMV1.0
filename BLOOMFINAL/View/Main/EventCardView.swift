@@ -31,14 +31,38 @@ struct EventCardView: View {
             
             VStack(alignment: .leading){
                 Text(event.name)
-                    .font(.body)
+                    .font(.title2)
                     .fontWeight(.semibold)
-                Text(event.date.formatted(date: .numeric, time: .shortened))
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                Text(event.description)
-                    .textSelection(.enabled)
-                    .padding(.vertical,8)
+                HStack{
+                    Image(systemName: "location")
+                        .font(.system(size: 16))
+                        .foregroundColor(Color("accent"))
+                    Text(event.venue)
+                        .font(.callout)
+                        .textSelection(.enabled)
+                        .padding(.vertical,8)
+                }
+                HStack{
+                    Image(systemName: "calendar")
+                        .font(.system(size: 16))
+                        .foregroundColor(Color("accent"))
+                    Text(event.date.formatted(date: .numeric, time: .shortened))
+                        .font(.callout)
+                        .foregroundColor(Color("primary"))
+                }
+                
+                HStack{
+                    Image(systemName: "text.bubble")
+                        .font(.system(size: 16))
+                        .foregroundColor(Color("accent"))
+                    Text(event.description)
+                        .textSelection(.enabled)
+                        .font(.callout)
+                        .padding(.vertical,8)
+                   
+                }
+               
+               
             }
         }
         .hAlign(.leading)

@@ -15,9 +15,10 @@ struct ExploreView: View {
         NavigationStack{
             ScrollView(.vertical, showsIndicators: false){
                 EventContentView(events: $recentEvents)
-                    
+                
             }.navigationTitle("Events")
                 .padding()
+                .background(Color("background"))
         }
     }
 }
