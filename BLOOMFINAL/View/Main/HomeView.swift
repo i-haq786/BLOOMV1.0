@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    init() {
+           // Customize the appearance of the UITabBar
+        let customColor = Color("background")
+        UITabBar.appearance().barTintColor = UIColor(customColor)
+       }
     var body: some View {
         //tab bar view
         TabView{

@@ -20,152 +20,150 @@ struct ProfileView: View {
     
     var body: some View {
         
-            NavigationStack{
-                VStack(alignment: .center){
-                    if let myProfile{
-                        ScrollView(.vertical, showsIndicators: false) {
-                            VStack{
-                                HStack {
-                                    HStack{
-                                        Image(systemName: "person.circle")
-                                            .resizable()
-                                            .frame(width: 16, height: 16)
-                                            .foregroundColor(Color("background"))
-                                        
-                                        Text(myProfile.userName)
-                                            .font(.system(size: 14))
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(Color("background"))
-                                        
-                                    }.padding()
+        NavigationStack{
+            VStack(alignment: .center){
+                if let myProfile{
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack{
+                            HStack {
+                                HStack{
+                                    Image(systemName: "person.circle")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                        .foregroundColor(Color("background"))
                                     
-//                                    Text(myProfile.userEmail)
-//                                        .font(.caption)
-//                                        .foregroundColor(.gray)
+                                    Text(myProfile.userName)
+                                        .font(.system(size: 14))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(Color("background"))
                                     
-                                    Text("|")
-                                    .font(.caption)
-                                    .foregroundColor(Color("background"))
-                                    
-                                    HStack{
-                                        Text(myProfile.userNumber)
-                                            .font(.caption)
-                                            .foregroundColor(.gray)
-                                        Image(systemName: "pencil.circle")
-                                            .resizable()
-                                            .frame(width: 16, height: 16)
-                                            .foregroundColor(Color("background"))
-                                    }.padding()
-                                    
-                                }
-                                .frame(width: 370, height: 50)
-                                .background(Color("highlight")).cornerRadius(20)
-                                .vAlign(.top)
-                                .refreshable {
-                                    //refresh user data
-                                    self.myProfile = nil
-                                    await fetchUserData()
-                                }
-                                
-                                VStack(alignment: .leading, spacing: 10) {
-                                    ProfileInfoRow(title: "My Account", description: "Bookmarks & Settings")
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
-                                    
-                                    ProfileInfoRow(title: "Address", description: "Enter & Edit Address")
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
-                                    
-                                    ProfileInfoRow(title: "Payment & refunds",description: "Payment history and refund status")
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
-                                    
-                                    ProfileInfoRow(title: "Help",description: "FAQ's & updates")
-                                    
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
-                                    
-                                    ProfileInfoRow(title: "Interests",description: "Edit & update your interests")
                                 }
                                 .padding()
-                                .frame(width: 370)
-                                .background(Color("highlight")).cornerRadius(30)
                                 
-                                VStack(alignment: .center, spacing: 10) {
-                                    
-                                    Text("Like our platform? Rate us")
+                                
+                                Text("|")
+                                    .font(.caption)
+                                    .foregroundColor(Color("background"))
+                                
+                                HStack{
+                                    Text(myProfile.userNumber)
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                    Image(systemName: "pencil.circle")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                        .foregroundColor(Color("background"))
+                                }.padding()
+                                
+                            }
+                            .frame(width: 370, height: 50)
+                            .background(Color("highlight")).cornerRadius(20)
+                            .vAlign(.top)
+                            .refreshable {
+                                //refresh user data
+                                self.myProfile = nil
+                                await fetchUserData()
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                ProfileInfoRow(title: "My Account", description: "Bookmarks & Settings")
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                ProfileInfoRow(title: "Address", description: "Enter & Edit Address")
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                ProfileInfoRow(title: "Payment & refunds",description: "Payment history and refund status")
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                ProfileInfoRow(title: "Help",description: "FAQ's & updates")
+                                
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                ProfileInfoRow(title: "Interests",description: "Edit & update your interests")
+                            }
+                            .padding()
+                            .frame(width: 370)
+                            .background(Color("highlight")).cornerRadius(30)
+                            
+                            VStack(alignment: .center, spacing: 10) {
+                                
+                                Text("Like our platform? Rate us")
+                                    .foregroundColor(Color("background"))
+                                    .font(.callout)
+                                    .fontWeight(.medium)
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                Image("Image 41")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 380, height: 180)
+                                    .background(Color("primary"))
+                                
+                                Divider()
+                                    .padding(.horizontal)
+                                    .foregroundColor(.white)
+                                
+                                HStack {
+                                    Text("Rate us on App Store")
                                         .foregroundColor(Color("background"))
                                         .font(.callout)
                                         .fontWeight(.medium)
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
                                     
-                                    Image("Image 41")
+                                    Image("Image 27")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 380, height: 180)
-                                        .background(Color("primary"))
+                                        .frame(width: 70, height: 50)
                                     
-                                    Divider()
-                                        .padding(.horizontal)
-                                        .foregroundColor(.white)
-                                    
-                                    HStack {
-                                        Text("Rate us on App Store")
-                                            .foregroundColor(Color("background"))
-                                            .font(.callout)
-                                        .fontWeight(.medium)
-                                        
-                                        Image("Image 27")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 70, height: 50)
-                                            
-                                    }
                                 }
-                                .padding()
-                                .frame(width: 370)
-                                .background(Color("highlight")).cornerRadius(30)
-                                
-                            
                             }
-                        }
-                        
-                    }else{
-                        ProgressView()
-                    }
-                }
-                .padding(15)
-                .background(Color("background"))
-                .navigationTitle("My Profile")
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Menu{
-                            Button("Logout", action: logout)
-                            Button("Delete Account", role: .destructive,action: deleteAccount)
-                        }label: {
-                            Image(systemName: "ellipsis")
-                                .rotationEffect(.init(degrees: 90))
-                                .tint(.black)
-                                .scaleEffect (0.8)
+                            .padding()
+                            .frame(width: 370)
+                            .background(Color("highlight")).cornerRadius(30)
+                            
+                            
                         }
                     }
+                    
+                }else{
+                    ProgressView()
                 }
-                .overlay{
-                    LoadingView(show: $isLoading)
+            }
+            .padding(15)
+            .background(Color("background"))
+            .navigationTitle("My Profile")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Menu{
+                        Button("Logout", action: logout)
+                        Button("Delete Account", role: .destructive,action: deleteAccount)
+                    }label: {
+                        Image(systemName: "ellipsis")
+                            .rotationEffect(.init(degrees: 90))
+                            .tint(.black)
+                            .scaleEffect (0.8)
+                    }
                 }
-                .alert(errorMessage, isPresented: $showError, actions: {})
-                .task {
-                    if myProfile != nil {return}
-                    //initial fetch
-                    await fetchUserData()
-                }
-          //  }
+            }
+            .overlay{
+                LoadingView(show: $isLoading)
+            }
+            .alert(errorMessage, isPresented: $showError, actions: {})
+            .task {
+                if myProfile != nil {return}
+                //initial fetch
+                await fetchUserData()
+            }
+            //  }
         }
     }
     
@@ -216,15 +214,15 @@ struct ProfileBackgroundView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 180)
                 .offset(x: 120,y: -270)
-
+            
             Image("Image 29")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 250, height: 300)
                 .rotationEffect(Angle(degrees: -25))
                 .offset(x: -120, y: 200)
-                
-          
+            
+            
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .background(Color("background"))
@@ -234,7 +232,7 @@ struct ProfileBackgroundView: View {
 struct ProfileInfoRow: View {
     var title: String
     var description: String = "Lorem Ipsum"
-
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -247,10 +245,10 @@ struct ProfileInfoRow: View {
                     .fontWeight(.regular)
                     .foregroundColor(Color("background"))
             }
-
+            
             Spacer()
-
-           Image("Image 40")
+            
+            Image("Image 50")
                 .resizable()
                 .frame(width: 5, height: 10)
             

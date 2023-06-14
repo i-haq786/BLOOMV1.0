@@ -62,6 +62,8 @@ struct EventContentView: View {
                     Task{await fetchEvents()}                }
             }
             Divider()
+                .padding(.top, 10)
+                .padding(.bottom, 10)
         }
     }
     //fetching events
