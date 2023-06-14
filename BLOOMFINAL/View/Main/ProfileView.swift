@@ -59,7 +59,7 @@ struct ProfileView: View {
                                     
                                 }
                                 .frame(width: 370, height: 50)
-                                .background(Color("primary")).cornerRadius(20)
+                                .background(Color("highlight")).cornerRadius(20)
                                 .vAlign(.top)
                                 .refreshable {
                                     //refresh user data
@@ -93,7 +93,7 @@ struct ProfileView: View {
                                 }
                                 .padding()
                                 .frame(width: 370)
-                                .background(Color("primary")).cornerRadius(30)
+                                .background(Color("highlight")).cornerRadius(30)
                                 
                                 VStack(alignment: .center, spacing: 10) {
                                     
@@ -109,7 +109,7 @@ struct ProfileView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 380, height: 180)
-                                        .border(Color.red, width: 3)
+                                        .background(Color("primary"))
                                     
                                     Divider()
                                         .padding(.horizontal)
@@ -130,7 +130,7 @@ struct ProfileView: View {
                                 }
                                 .padding()
                                 .frame(width: 370)
-                                .background(Color("primary")).cornerRadius(30)
+                                .background(Color("highlight")).cornerRadius(30)
                                 
                             
                             }
