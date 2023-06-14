@@ -125,7 +125,8 @@ struct PassView: View {
                     
                     VStack {
                         QRCodeGenerator(eventName: data.name, eventDate: data.day, eventTime: data.time, personsCount: data.personsCount)
-                        Text("\(data.personsCount) Person (s)")
+                        
+                        Text("\(data.personsCount) Person(s)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
                             .fontWeight(.bold)
