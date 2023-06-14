@@ -9,28 +9,33 @@ import SwiftUI
 
 struct HostEventView: View {
     @State private var createNewEvent: Bool = false
+    @State private var recentEvents: [Event] = []
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .hAlign(.center).vAlign(.center)
-            .overlay(alignment: .bottomTrailing){
-                Button {
-                    createNewEvent.toggle()
-                } label:{
-                    Image(systemName: "plus")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(13)
-                        .background(.black, in:Circle())
+        NavigationStack{
+            ScrollView(.vertical, showsIndicators: false){
+                EventContentView(events: $recentEvents)
+            }.navigationTitle("Hosted Events")
+                .padding()
+                .overlay(alignment: .bottomTrailing){
+                    Button {
+                        createNewEvent.toggle()
+                    } label:{
+                        Image(systemName: "plus")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(13)
+                            .background(.black, in:Circle())
+                    }
+                    .padding (15)
                 }
-                .padding (15)
-            }
-            .fullScreenCover(isPresented: $createNewEvent){
-                CreateNewEvent{event in
-                    
+                .fullScreenCover(isPresented: $createNewEvent){
+                    CreateNewEvent{event in
+                        
+                    }
                 }
-            }
+        }
     }
 }
 
