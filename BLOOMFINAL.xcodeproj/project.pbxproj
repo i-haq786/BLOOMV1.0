@@ -25,6 +25,7 @@
 		3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD822A36E9AF00886CE4 /* Views + Extensions.swift */; };
 		3811CD862A36F69800886CE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD852A36F69800886CE4 /* HomeView.swift */; };
 		3811CD882A36F94100886CE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD872A36F94100886CE4 /* ProfileView.swift */; };
+		3811CD8A2A37047C00886CE4 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD892A37047C00886CE4 /* ProfileContentView.swift */; };
 		3811CD8E2A3715BB00886CE4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD8D2A3715BB00886CE4 /* Event.swift */; };
 		38B298112A38C50500F9A559 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 38B298102A38C50500F9A559 /* SDWebImageSwiftUI */; };
 		38CCC48D2A37B16300E350C9 /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 38CCC48C2A37B16300E350C9 /* MapItemPicker */; };
@@ -50,6 +51,7 @@
 		3811CD822A36E9AF00886CE4 /* Views + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views + Extensions.swift"; sourceTree = "<group>"; };
 		3811CD852A36F69800886CE4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3811CD872A36F94100886CE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3811CD892A37047C00886CE4 /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		3811CD8D2A3715BB00886CE4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		38CCC48E2A385D6800E350C9 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		38CCC4902A385F7400E350C9 /* HostEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEventView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				3811CD852A36F69800886CE4 /* HomeView.swift */,
 				3811CD872A36F94100886CE4 /* ProfileView.swift */,
+				3811CD892A37047C00886CE4 /* ProfileContentView.swift */,
 				0E869C832A390325004DD6C0 /* CreateNewEvent.swift */,
 				38CCC48E2A385D6800E350C9 /* ExploreView.swift */,
 				38CCC4902A385F7400E350C9 /* HostEventView.swift */,
@@ -396,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = TBCL3BV72X;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -425,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = TBCL3BV72X;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
