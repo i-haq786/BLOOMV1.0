@@ -250,7 +250,7 @@ struct ProfileInfoRow: View {
 
             Spacer()
 
-           Image("Image 40")
+           Image("Image 50")
                 .resizable()
                 .frame(width: 5, height: 10)
             
