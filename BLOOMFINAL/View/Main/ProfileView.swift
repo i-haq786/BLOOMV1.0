@@ -140,6 +140,7 @@ struct ProfileView: View {
                         ProgressView()
                     }
                 }
+                .padding(15)
                 .background(Color("background"))
                 .navigationTitle("My Profile")
                 .toolbar{
