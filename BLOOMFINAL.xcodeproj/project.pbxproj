@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E35DAC82A39A41800633E2B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E35DAC72A39A41800633E2B /* Launch Screen.storyboard */; };
 		0E4DF85A2A391ED600D07B6E /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */; };
 		0E4DF85D2A391F0B00D07B6E /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF85C2A391F0B00D07B6E /* PassView.swift */; };
 		0E869C842A390325004DD6C0 /* CreateNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E869C832A390325004DD6C0 /* CreateNewEvent.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E35DAC72A39A41800633E2B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../../../../.Trash/BLOOMfinal 12.56.00 PM/BLOOMFINAL/View/Main/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		0E4DF85C2A391F0B00D07B6E /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		0E869C832A390325004DD6C0 /* CreateNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEvent.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				3811CD852A36F69800886CE4 /* HomeView.swift */,
 				3811CD872A36F94100886CE4 /* ProfileView.swift */,
+				0E35DAC72A39A41800633E2B /* Launch Screen.storyboard */,
 				0E869C832A390325004DD6C0 /* CreateNewEvent.swift */,
 				38CCC48E2A385D6800E350C9 /* ExploreView.swift */,
 				38CCC4902A385F7400E350C9 /* HostEventView.swift */,
@@ -255,6 +258,7 @@
 			files = (
 				3811CD5D2A34ED4600886CE4 /* Preview Assets.xcassets in Resources */,
 				3811CD6A2A35016400886CE4 /* GoogleService-Info.plist in Resources */,
+				0E35DAC82A39A41800633E2B /* Launch Screen.storyboard in Resources */,
 				3811CD5A2A34ED4600886CE4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
