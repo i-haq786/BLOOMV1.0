@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct PassView: View {
+    let data: PassData
+
     @State private var poster: Image = Image("Image 10")
     @State private var name: String = "Devfest 2022"
     @State private var organizer: String = "GDG Chennai"
@@ -136,9 +138,9 @@ struct PassView: View {
         }
     }
 }
-
-struct PassView_Previews: PreviewProvider {
-    static var previews: some View {
-        PassView()
-    }
-}
+//
+//struct PassView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PassView()
+//    }
+//}
