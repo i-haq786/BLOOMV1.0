@@ -79,9 +79,6 @@ struct EventContentView: View {
                     .order(by: "date", descending: true)
                     .limit(to: 20)
             }
-            
-           
-            
             //query for UID
 //            if basedOnUID{
 //                query = query.whereField("userUID", in: uid)

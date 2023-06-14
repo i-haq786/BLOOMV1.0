@@ -10,11 +10,12 @@ import SwiftUI
 struct HostEventView: View {
     @State private var createNewEvent: Bool = false
     @State private var recentEvents: [Event] = []
+    @State private var myProfile: Event?
     
     var body: some View {
         NavigationStack{
             ScrollView(.vertical, showsIndicators: false){
-                EventContentView(events: $recentEvents)
+               ReusableContentView( events: $recentEvents)
             }.navigationTitle("Hosted Events")
                 .padding()
                 .overlay(alignment: .bottomTrailing){

@@ -35,6 +35,7 @@
 		38CCC4932A386ACD00E350C9 /* EventContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCC4922A386ACD00E350C9 /* EventContentView.swift */; };
 		38CCC4952A38A02900E350C9 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCC4942A38A02900E350C9 /* EventCardView.swift */; };
 		38E4B77A2A3985850026A487 /* SearchEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7792A3985850026A487 /* SearchEventView.swift */; };
+		38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B77B2A3990740026A487 /* ReusableContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		38CCC4922A386ACD00E350C9 /* EventContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentView.swift; sourceTree = "<group>"; };
 		38CCC4942A38A02900E350C9 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		38E4B7792A3985850026A487 /* SearchEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventView.swift; sourceTree = "<group>"; };
+		38E4B77B2A3990740026A487 /* ReusableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				38CCC4922A386ACD00E350C9 /* EventContentView.swift */,
 				38CCC4942A38A02900E350C9 /* EventCardView.swift */,
 				38E4B7792A3985850026A487 /* SearchEventView.swift */,
+				38E4B77B2A3990740026A487 /* ReusableContentView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				38CCC4912A385F7400E350C9 /* HostEventView.swift in Sources */,
 				38CCC48F2A385D6800E350C9 /* ExploreView.swift in Sources */,
 				3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */,
+				38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */,
 				38CCC4932A386ACD00E350C9 /* EventContentView.swift in Sources */,
 				3811CD862A36F69800886CE4 /* HomeView.swift in Sources */,
 				3811CD7E2A36D0F800886CE4 /* LoadingView.swift in Sources */,
