@@ -10,9 +10,11 @@ import Firebase
 
 struct EventContentView: View {
     
+//    var basedOnUID: Bool = false
+//    var uid: String = ""
     @Binding var events: [Event]
-    @State var isFetching: Bool = true
-    
+    @State private var isFetching: Bool = true
+    @State private var paginationDoc: QueryDocumentSnapshot?
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -35,8 +37,11 @@ struct EventContentView: View {
             .padding(15)
         }
         .refreshable{
+           // guard !basedOnUID else{return}
+            
             isFetching = true
             events = []
+         //   paginationDoc = nil
             await fetchEvents()
         }
         .task{
@@ -52,6 +57,9 @@ struct EventContentView: View {
                 
             }onDelete: {
                 
+            }.onAppear{
+                if event.id == events.last?.id && paginationDoc != nil{
+                    Task{await fetchEvents()}                }
             }
             Divider()
         }
@@ -60,16 +68,33 @@ struct EventContentView: View {
     func fetchEvents()async{
         do{
             var query: Query!
-            query = Firestore.firestore().collection("Events")
-                .order(by: "date", descending: true)
-                .limit(to: 20)
+            //pagination
+            if let paginationDoc{
+                query = Firestore.firestore().collection("Events")
+                    .order(by: "date", descending: true)
+                    .start(afterDocument: paginationDoc)
+                    .limit(to: 20)
+            }else{
+                query = Firestore.firestore().collection("Events")
+                    .order(by: "date", descending: true)
+                    .limit(to: 20)
+            }
+            
+           
+            
+            //query for UID
+//            if basedOnUID{
+//                query = query.whereField("userUID", in: uid)
+//            }
+            
             let docs = try await query.getDocuments()
             
             let fetchedEvents = docs.documents.compactMap{ doc -> Event? in
                 try? doc.data(as: Event.self)
             }
             await MainActor.run(body:{
-                events = fetchedEvents
+                events.append(contentsOf: fetchedEvents)
+                paginationDoc = docs.documents.last
                 isFetching = false
             })
         }catch{
