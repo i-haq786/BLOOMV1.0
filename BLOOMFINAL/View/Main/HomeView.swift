@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-    init() {
-           // Customize the appearance of the UITabBar
-        let customColor = Color("background")
-        UITabBar.appearance().barTintColor = UIColor(customColor)
-       }
+//    init() {
+//           // Customize the appearance of the UITabBar
+//
+//       }
     var body: some View {
         //tab bar view
         TabView{
@@ -41,8 +40,8 @@ struct HomeView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-        }.background(Color("background").edgesIgnoringSafeArea(.all))
-        .tint(.black)
+        }
+        .tint(Color("tab"))
     }
 }
 
