@@ -17,7 +17,7 @@ struct HostEventView: View {
             ScrollView(.vertical, showsIndicators: false){
                 ReusableContentView( events: $recentEvents)
             }.navigationTitle("Hosted Events")
-                .padding()
+               // .padding()
                 .overlay(alignment: .bottomTrailing){
                     Button {
                         createNewEvent.toggle()
