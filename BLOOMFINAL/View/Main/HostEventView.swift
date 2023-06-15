@@ -36,7 +36,7 @@ struct HostEventView: View {
                     CreateNewEvent{event in
                         
                     }
-                } .background(Color("background").edgesIgnoringSafeArea(.all))
+                }
         }
         
     }

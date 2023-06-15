@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 struct ExploreView: View {
     
     @State private var recentEvents: [Event] = []
-    @State private var activeTag: String = "Pottery"
+    @State private var activeTag: String = "All"
     @Namespace private var animation
     
     var body: some View {
@@ -30,6 +30,7 @@ struct ExploreView: View {
 //                    }
 //                }
                 .coordinateSpace(name: "SCROLLVIEW")
+                .padding(.top, 15)
             }
             .navigationTitle("Events")
             
@@ -60,6 +61,7 @@ struct ExploreView: View {
 //        .frame(height: 220)
 //    }
 //
+    
     
     @ViewBuilder
     func TagView() -> some View{
@@ -94,7 +96,7 @@ struct ExploreView: View {
     
 }
 var tags: [String] = [
-    "Coding", "Pottery", "Gardening", "Cooking", "Wellness", "Exercise", "Dance & Music"
+    "All", "Coding", "Pottery", "Gardening", "Cooking", "Wellness", "Exercise", "Dance & Music"
 ]
 
 struct ExploreView_Previews: PreviewProvider {
