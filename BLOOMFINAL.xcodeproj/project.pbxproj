@@ -40,6 +40,8 @@
 		38E4B7812A39AF010026A487 /* PassesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7802A39AF010026A487 /* PassesView.swift */; };
 		38E4B7832A39B01B0026A487 /* PassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7822A39B01B0026A487 /* PassData.swift */; };
 		38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E4B7862A39C88E0026A487 /* LandingScreen.swift */; };
+		38FECE1E2A3A8FA30060DCAB /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE1D2A3A8FA30060DCAB /* Today.swift */; };
+		38FECE202A3A9EA40060DCAB /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		38E4B7802A39AF010026A487 /* PassesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassesView.swift; sourceTree = "<group>"; };
 		38E4B7822A39B01B0026A487 /* PassData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassData.swift; sourceTree = "<group>"; };
 		38E4B7862A39C88E0026A487 /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
+		38FECE1D2A3A8FA30060DCAB /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */,
 				0E4DF85C2A391F0B00D07B6E /* PassView.swift */,
+				38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				3811CD7B2A36C7E200886CE4 /* User.swift */,
 				3811CD8D2A3715BB00886CE4 /* Event.swift */,
 				38E4B7822A39B01B0026A487 /* PassData.swift */,
+				38FECE1D2A3A8FA30060DCAB /* Today.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,8 +294,10 @@
 				3811CD702A35022100886CE4 /* LoginView.swift in Sources */,
 				38E4B77A2A3985850026A487 /* SearchEventView.swift in Sources */,
 				3811CD8E2A3715BB00886CE4 /* Event.swift in Sources */,
+				38FECE1E2A3A8FA30060DCAB /* Today.swift in Sources */,
 				0E4DF85A2A391ED600D07B6E /* QRCodeGenerator.swift in Sources */,
 				38CCC4952A38A02900E350C9 /* EventCardView.swift in Sources */,
+				38FECE202A3A9EA40060DCAB /* CustomCorner.swift in Sources */,
 				0E4DF85D2A391F0B00D07B6E /* PassView.swift in Sources */,
 				3811CD582A34ED4500886CE4 /* ContentView.swift in Sources */,
 				3811CD812A36E8BC00886CE4 /* RegisterView.swift in Sources */,

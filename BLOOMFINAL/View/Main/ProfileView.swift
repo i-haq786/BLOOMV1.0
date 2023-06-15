@@ -57,7 +57,7 @@ struct ProfileView: View {
                                 
                             }
                             .frame(width: 370, height: 50)
-                            .background(Color("highlight")).cornerRadius(20)
+                            .background(Color("dark")).cornerRadius(20)
                             .vAlign(.top)
                             .refreshable {
                                 //refresh user data
@@ -89,9 +89,9 @@ struct ProfileView: View {
                                 
                                 ProfileInfoRow(title: "Interests",description: "Edit & update your interests")
                             }
-                            .padding()
+                             .padding(30)
                             .frame(width: 370)
-                            .background(Color("highlight")).cornerRadius(30)
+                            .background(Color("dark")).cornerRadius(30)
                             
                             VStack(alignment: .center, spacing: 10) {
                                 
@@ -128,7 +128,7 @@ struct ProfileView: View {
                             }
                             .padding()
                             .frame(width: 370)
-                            .background(Color("highlight")).cornerRadius(30)
+                            .background(Color("dark")).cornerRadius(30)
                             
                             
                         }
@@ -138,8 +138,7 @@ struct ProfileView: View {
                     ProgressView()
                 }
             }
-            .padding(15)
-            .background(Color("background"))
+           // .padding()
             .navigationTitle("My Profile")
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
@@ -149,7 +148,7 @@ struct ProfileView: View {
                     }label: {
                         Image(systemName: "ellipsis")
                             .rotationEffect(.init(degrees: 90))
-                            .tint(.black)
+                            .tint(Color("tab"))
                             .scaleEffect (0.8)
                     }
                 }
@@ -225,7 +224,6 @@ struct ProfileBackgroundView: View {
             
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        .background(Color("background").edgesIgnoringSafeArea(.all))
     }
 }
 
