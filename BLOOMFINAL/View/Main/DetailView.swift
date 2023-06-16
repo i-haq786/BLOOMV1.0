@@ -102,6 +102,18 @@ struct DetailView: View {
         }
     }
     
+    func shareEvent() {
+
+        let shareText = "Join me for \(event?.name ?? "") which is about \(event?.description ?? "")"
+            
+
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let rootViewController = windowScene.windows.first?.rootViewController {
+                let activityViewController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+                rootViewController.present(activityViewController, animated: true, completion: nil)
+            }
+        }
+    
     @ViewBuilder
     func EventDetails() -> some View{
         VStack(){
@@ -115,6 +127,7 @@ struct DetailView: View {
                 .frame (maxWidth: .infinity)
                 
                 Button {
+                    shareEvent()
                 } label: {
                     Label ("Share", systemImage: "square.and.arrow.up")
                         .font (.callout)
