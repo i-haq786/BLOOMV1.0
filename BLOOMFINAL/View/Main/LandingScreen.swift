@@ -194,7 +194,7 @@ struct LandingScreen: View {
             label: {
                 Text("INFO")
                     .fontWeight (.bold)
-                    .foregroundColor (.white)
+                    .foregroundColor(Color("tab"))
                     .padding (.vertical,8)
                     .padding (.horizontal, 20)
                     .background{

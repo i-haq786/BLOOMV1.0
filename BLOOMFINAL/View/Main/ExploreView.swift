@@ -58,7 +58,7 @@ struct ExploreView: View {
                                     .matchedGeometryEffect(id: "ACTIVETAB" ,in: animation)
                             } else {
                                 Capsule ()
-                                    .fill(.gray.opacity(0.2))
+                                    .fill(.ultraThinMaterial)
                             }
                         }
                         .foregroundColor (activeTag == tag ? Color("otab") : Color("tab"))
@@ -147,7 +147,7 @@ struct ExploreView: View {
                             
                             Text(event.date.formatted(date: .numeric, time: .shortened))
                                 .font(.caption)
-                                .foregroundColor(Color("primary"))
+                               
                             
                             Spacer()
                             
@@ -160,13 +160,13 @@ struct ExploreView: View {
                                 
                                 Text("Registrations")
                                     .font(.caption)
-                                    .foregroundColor(Color("primary"))
+                                  
                                 
                                 Spacer(minLength: 0)
                                 
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
-                                    .foregroundColor(Color("primary"))
+                                   
                             }
                         }
                     }
@@ -174,7 +174,7 @@ struct ExploreView: View {
                     .frame(width: size.width / 2, height: size.height * 0.8)
                     .background {
                         RoundedRectangle (cornerRadius: 10, style: .continuous)
-                            .fill(.white)
+                            .fill(Color("otab"))
                         // Applying Shadow
                             .shadow (color: .black.opacity(0.08), radius: 8, x: 5, y: 5)
                             .shadow(color: .black.opacity(0.08), radius: 8, x: -5, y: -5)
