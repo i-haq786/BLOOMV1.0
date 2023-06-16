@@ -36,9 +36,9 @@ struct HostEventView: View {
                         Image(systemName: "plus")
                             .font(.title3)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("background"))
                             .padding(13)
-                            .background(.black, in:Circle())
+                            .background(Color("accent"), in:Circle())
                     }
                     .padding (15)
                     

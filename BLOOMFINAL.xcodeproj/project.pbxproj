@@ -43,6 +43,7 @@
 		38FECE1E2A3A8FA30060DCAB /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE1D2A3A8FA30060DCAB /* Today.swift */; };
 		38FECE202A3A9EA40060DCAB /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */; };
 		38FECE222A3BA0900060DCAB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE212A3BA0900060DCAB /* DetailView.swift */; };
+		38FECE242A3C03DB0060DCAB /* BookEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE232A3C03DB0060DCAB /* BookEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		38FECE1D2A3A8FA30060DCAB /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		38FECE212A3BA0900060DCAB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		38FECE232A3C03DB0060DCAB /* BookEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				38E4B7802A39AF010026A487 /* PassesView.swift */,
 				38E4B7862A39C88E0026A487 /* LandingScreen.swift */,
 				38FECE212A3BA0900060DCAB /* DetailView.swift */,
+				38FECE232A3C03DB0060DCAB /* BookEvent.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */,
 				3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */,
 				38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */,
+				38FECE242A3C03DB0060DCAB /* BookEvent.swift in Sources */,
 				38CCC4932A386ACD00E350C9 /* EventContentView.swift in Sources */,
 				3811CD862A36F69800886CE4 /* HomeView.swift in Sources */,
 				3811CD7E2A36D0F800886CE4 /* LoadingView.swift in Sources */,

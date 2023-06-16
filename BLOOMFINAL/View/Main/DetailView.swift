@@ -154,11 +154,11 @@ struct DetailView: View {
                     Text("Book event")
                         .fontWeight (.bold)
                         .padding (.vertical,8)
+                        .foregroundColor(.white)
                         .padding (.horizontal, 20)
                         .background{
                             Capsule()
-                                .fill(.ultraThinMaterial)
-                                .foregroundColor(Color("otab"))
+                                .fill(Color("accent"))
                         }
                 }
                 }
