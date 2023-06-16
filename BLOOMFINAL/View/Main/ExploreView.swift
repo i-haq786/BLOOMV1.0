@@ -37,7 +37,7 @@ struct ExploreView: View {
             if let selectedEvent = selectedEvent, showDetailsView {
                 DetailView(show: $showDetailsView, animation: animation, event: selectedEvent)
                     .transition(.asymmetric(insertion: .identity, removal: AnyTransition.offset(CGSize(width: 0, height: 5))))
-
+                
             }
         }
     }
@@ -95,10 +95,10 @@ struct ExploreView: View {
             .padding(15)
         }
         .refreshable{
-           // guard !basedOnUID else{return}
+            // guard !basedOnUID else{return}
             isFetching = true
             recentEvents = []
-         //   paginationDoc = nil
+            //   paginationDoc = nil
             await fetchEvents()
         }
         .task{
@@ -113,17 +113,17 @@ struct ExploreView: View {
     func Events() -> some View {
         ForEach(recentEvents) { event in
             EventCard(event)
-            .onAppear {
-                if event.id == recentEvents.last?.id && paginationDoc != nil {
-                    Task { await fetchEvents() }
+                .onAppear {
+                    if event.id == recentEvents.last?.id && paginationDoc != nil {
+                        Task { await fetchEvents() }
+                    }
                 }
-            }
-            .onTapGesture {
-                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                    selectedEvent = event
-                    showDetailsView = true
+                .onTapGesture {
+                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                        selectedEvent = event
+                        showDetailsView = true
+                    }
                 }
-            }
             Divider()
                 .padding(.top, 10)
                 .padding(.bottom, 10)
@@ -135,12 +135,40 @@ struct ExploreView: View {
         if let eventImage = event.imgURL{
             GeometryReader{
                 let size = $0.size
-//                    let rect = $0.frame(in: .named("SCROLLVIEW") )
+                //                    let rect = $0.frame(in: .named("SCROLLVIEW") )
                 //New design
                 HStack(spacing: -25){
                     // detail card
                     VStack(alignment: .leading, spacing: 6){
-                      
+                        VStack(alignment: .leading, spacing: 8){
+                            Text(event.name)
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            
+                            Text(event.date.formatted(date: .numeric, time: .shortened))
+                                .font(.caption)
+                                .foregroundColor(Color("primary"))
+                            
+                            Spacer()
+                            
+                            HStack(spacing: 4){
+                                
+                                Text("users")
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color("accent"))
+                                
+                                Text("Registrations")
+                                    .font(.caption)
+                                    .foregroundColor(Color("primary"))
+                                
+                                Spacer(minLength: 0)
+                                
+                                Image(systemName: "chevron.right")
+                                    .font(.caption)
+                                    .foregroundColor(Color("primary"))
+                            }
+                        }
                     }
                     .padding()
                     .frame(width: size.width / 2, height: size.height * 0.8)
@@ -167,7 +195,7 @@ struct ExploreView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .frame(width: size.width)
-//                    .rotation3DEffect(.init(degrees: convertoffsetToRotation(rect)), axis: (x:1, y:0, z:0), anchor: .bottom, anchorZ: 1, perspective: 0.8)
+                //                    .rotation3DEffect(.init(degrees: convertoffsetToRotation(rect)), axis: (x:1, y:0, z:0), anchor: .bottom, anchorZ: 1, perspective: 0.8)
             }
             .frame(height: 220)
         }
@@ -189,9 +217,9 @@ struct ExploreView: View {
                     .limit(to: 20)
             }
             //query for UID
-//            if basedOnUID{
-//                query = query.whereField("userUID", in: uid)
-//            }
+            //            if basedOnUID{
+            //                query = query.whereField("userUID", in: uid)
+            //            }
             
             let docs = try await query.getDocuments()
             
