@@ -64,11 +64,13 @@ struct ReusableContentView: View {
     @ViewBuilder
     func Events()->some View{
         ForEach(events){event in
-            EventCardView(event: event){updatedEvent in
-                
-            }onDelete: {
-                
-            }.onAppear{
+            EventCardView(event: event)
+//            {updatedEvent in
+//                
+//            }onDelete: {
+//                
+//            }
+            .onAppear{
                 if event.id == events.last?.id && paginationDoc != nil{
                     Task{await fetchEvents()}                }
             }

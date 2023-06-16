@@ -9,23 +9,23 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct EventCardView: View {
-    
+
     var event: Event
-    var onUpdate: (Event)->()
-    var onDelete: ()->()
-    
+//    var onUpdate: (Event)->()
+//    var onDelete: ()->()
+
     var body: some View {
-        
+
             if let eventImage = event.imgURL{
                 GeometryReader{
                     let size = $0.size
-                    let rect = $0.frame(in: .named("SCROLLVIEW") )
-                
+//                    let rect = $0.frame(in: .named("SCROLLVIEW") )
+
                     //New design
                     HStack(spacing: -25){
                         // detail card
                         VStack(alignment: .leading, spacing: 6){
-                          
+
                         }
                         .padding()
                         .frame(width: size.width / 2, height: size.height * 0.8)
@@ -37,8 +37,9 @@ struct EventCardView: View {
                                 .shadow(color: .black.opacity(0.08), radius: 8, x: -5, y: -5)
                         }
                         .zIndex(1)
-                        
+
                         ZStack(){
+
                             WebImage(url: eventImage)
                                 .resizable ()
                                 .aspectRatio (contentMode: .fill)
@@ -53,11 +54,11 @@ struct EventCardView: View {
 //                    .rotation3DEffect(.init(degrees: convertoffsetToRotation(rect)), axis: (x:1, y:0, z:0), anchor: .bottom, anchorZ: 1, perspective: 0.8)
                 }
                 .frame(height: 220)
-               
+
             }
-        
+
     }
-    
+
 //    func convertoffsetToRotation(_ rect: CGRect) -> CGFloat {
 //        let cardHeight = rect.height
 //        let minY = rect.minY - 20
