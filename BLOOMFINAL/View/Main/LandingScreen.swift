@@ -81,6 +81,18 @@ struct LandingScreen: View {
         }
     }
     
+    func shareEvent() {
+
+            let shareText = "Please down BLOOM's app to register for this Pottery Event.\nEvent: Pottery Making\nPotters Street\n30 June 2023"
+            
+
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let rootViewController = windowScene.windows.first?.rootViewController {
+                let activityViewController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+                rootViewController.present(activityViewController, animated: true, completion: nil)
+            }
+        }
+    
     func DetailedView(item:Today)-> some View{
         ScrollView(.vertical, showsIndicators: false){
             VStack{
@@ -98,7 +110,7 @@ struct LandingScreen: View {
                     Divider()
                     
                     Button{
-                        
+                        shareEvent()
                     }label:{
                         Label {
                             Text ("Share Event")
