@@ -6,13 +6,6 @@
 //
 //
 
-//
-//  AccountDetailView.swift
-//  BLOOMFINAL
-//
-//  Created by Inzamam on 16/06/23.
-//
-//
 
 import SwiftUI
 

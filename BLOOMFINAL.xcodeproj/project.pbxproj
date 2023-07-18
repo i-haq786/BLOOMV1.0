@@ -10,6 +10,8 @@
 		0E4DF85A2A391ED600D07B6E /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */; };
 		0E4DF85D2A391F0B00D07B6E /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF85C2A391F0B00D07B6E /* PassView.swift */; };
 		0E869C842A390325004DD6C0 /* CreateNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E869C832A390325004DD6C0 /* CreateNewEvent.swift */; };
+		0ECF11EB2A621D860063E4AA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EA2A621D860063E4AA /* SummaryView.swift */; };
+		0ECF11F02A630A800063E4AA /* ScrollSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EF2A630A800063E4AA /* ScrollSection.swift */; };
 		3811CD562A34ED4500886CE4 /* BLOOMFINALApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD552A34ED4500886CE4 /* BLOOMFINALApp.swift */; };
 		3811CD582A34ED4500886CE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD572A34ED4500886CE4 /* ContentView.swift */; };
 		3811CD5A2A34ED4600886CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3811CD592A34ED4600886CE4 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		0E4DF85C2A391F0B00D07B6E /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		0E869C832A390325004DD6C0 /* CreateNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEvent.swift; sourceTree = "<group>"; };
+		0ECF11EA2A621D860063E4AA /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		0ECF11EF2A630A800063E4AA /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
 		3811CD522A34ED4500886CE4 /* BLOOMFINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLOOMFINAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811CD552A34ED4500886CE4 /* BLOOMFINALApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLOOMFINALApp.swift; sourceTree = "<group>"; };
 		3811CD572A34ED4500886CE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,11 +115,27 @@
 		0E4DF85B2A391EDC00D07B6E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				38CCC4942A38A02900E350C9 /* EventCardView.swift */,
+				0ECF11EF2A630A800063E4AA /* ScrollSection.swift */,
+				38E4B77B2A3990740026A487 /* ReusableContentView.swift */,
 				0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */,
 				0E4DF85C2A391F0B00D07B6E /* PassView.swift */,
 				38FECE1F2A3A9EA40060DCAB /* CustomCorner.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		0ECF11EE2A6227130063E4AA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3811CD872A36F94100886CE4 /* ProfileView.swift */,
+				3898F8FE2A3C1EB1007F24AA /* BookMarkPage.swift */,
+				3898F8FA2A3C1E5A007F24AA /* FAQDetailView.swift */,
+				3898F8FC2A3C1E90007F24AA /* DislikeFeedbackView.swift */,
+				3898F9002A3C1ECF007F24AA /* AccountDetailView.swift */,
+				3898F8F82A3C1E2C007F24AA /* address.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3811CD492A34ED4500886CE4 = {
@@ -201,23 +221,17 @@
 			isa = PBXGroup;
 			children = (
 				3811CD852A36F69800886CE4 /* HomeView.swift */,
-				3811CD872A36F94100886CE4 /* ProfileView.swift */,
+				38E4B7862A39C88E0026A487 /* LandingScreen.swift */,
+				0ECF11EA2A621D860063E4AA /* SummaryView.swift */,
 				0E869C832A390325004DD6C0 /* CreateNewEvent.swift */,
 				38CCC48E2A385D6800E350C9 /* ExploreView.swift */,
 				38CCC4902A385F7400E350C9 /* HostEventView.swift */,
 				38CCC4922A386ACD00E350C9 /* EventContentView.swift */,
-				38CCC4942A38A02900E350C9 /* EventCardView.swift */,
-				38E4B7792A3985850026A487 /* SearchEventView.swift */,
-				38E4B77B2A3990740026A487 /* ReusableContentView.swift */,
 				38E4B7802A39AF010026A487 /* PassesView.swift */,
-				38E4B7862A39C88E0026A487 /* LandingScreen.swift */,
 				38FECE212A3BA0900060DCAB /* DetailView.swift */,
 				38FECE232A3C03DB0060DCAB /* BookEvent.swift */,
-				3898F8F82A3C1E2C007F24AA /* address.swift */,
-				3898F8FA2A3C1E5A007F24AA /* FAQDetailView.swift */,
-				3898F8FC2A3C1E90007F24AA /* DislikeFeedbackView.swift */,
-				3898F8FE2A3C1EB1007F24AA /* BookMarkPage.swift */,
-				3898F9002A3C1ECF007F24AA /* AccountDetailView.swift */,
+				38E4B7792A3985850026A487 /* SearchEventView.swift */,
+				0ECF11EE2A6227130063E4AA /* Profile */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -320,6 +334,7 @@
 				0E4DF85A2A391ED600D07B6E /* QRCodeGenerator.swift in Sources */,
 				38FECE222A3BA0900060DCAB /* DetailView.swift in Sources */,
 				38CCC4952A38A02900E350C9 /* EventCardView.swift in Sources */,
+				0ECF11F02A630A800063E4AA /* ScrollSection.swift in Sources */,
 				3898F8FD2A3C1E90007F24AA /* DislikeFeedbackView.swift in Sources */,
 				38FECE202A3A9EA40060DCAB /* CustomCorner.swift in Sources */,
 				3898F8F92A3C1E2C007F24AA /* address.swift in Sources */,
@@ -330,6 +345,7 @@
 				38CCC4912A385F7400E350C9 /* HostEventView.swift in Sources */,
 				38CCC48F2A385D6800E350C9 /* ExploreView.swift in Sources */,
 				38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */,
+				0ECF11EB2A621D860063E4AA /* SummaryView.swift in Sources */,
 				3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */,
 				38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */,
 				3898F8FF2A3C1EB1007F24AA /* BookMarkPage.swift in Sources */,

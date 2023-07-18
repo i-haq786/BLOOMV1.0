@@ -153,7 +153,7 @@ struct ExploreView: View {
                             
                             HStack(spacing: 4){
                                 
-                                Text("users")
+                                Text("110")
                                     .font(.caption)
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color("accent"))

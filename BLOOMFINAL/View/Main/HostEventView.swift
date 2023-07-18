@@ -21,6 +21,7 @@ struct HostEventView: View {
     @Namespace private var animation
     @State var showDetailsView: Bool = false
     @State private var animateCurrentEvent: Bool = false
+    var users: Int = 122
 
     
     var body: some View {
@@ -124,7 +125,7 @@ struct HostEventView: View {
                             
                             HStack(spacing: 4){
                                 
-                                Text("users")
+                                Text("\(users)")
                                     .font(.caption)
                                     .fontWeight(.semibold)
                                     .foregroundColor(Color("accent"))
