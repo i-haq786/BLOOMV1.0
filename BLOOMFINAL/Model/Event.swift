@@ -17,6 +17,8 @@ struct Event: Identifiable,Codable{
     var venue: String
     var description: String
     var date: Date
+    var cost: Double
+    var category: String
    // var interests: [String]
     
     // MARK: Basic User Info
@@ -31,6 +33,8 @@ struct Event: Identifiable,Codable{
         case name
         case description
         case date
+        case cost
+        case category
   //      case interests
         case userName
         case userUID

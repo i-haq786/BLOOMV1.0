@@ -10,6 +10,11 @@
 		0E4DF85A2A391ED600D07B6E /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */; };
 		0E4DF85D2A391F0B00D07B6E /* PassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DF85C2A391F0B00D07B6E /* PassView.swift */; };
 		0E869C842A390325004DD6C0 /* CreateNewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E869C832A390325004DD6C0 /* CreateNewEvent.swift */; };
+		0ECB30F92A676E3B00EBF8CA /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB30F82A676E3B00EBF8CA /* Feedback.swift */; };
+		0ECB31392A68652500EBF8CA /* InterestUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB31382A68652500EBF8CA /* InterestUI.swift */; };
+		0ECB313B2A686D0800EBF8CA /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB313A2A686D0800EBF8CA /* InterestView.swift */; };
+		0ECB313F2A68863A00EBF8CA /* BookingConfirmationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB313E2A68863A00EBF8CA /* BookingConfirmationPage.swift */; };
+		0ECB31412A68900500EBF8CA /* NoEventsDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */; };
 		0ECF11EB2A621D860063E4AA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EA2A621D860063E4AA /* SummaryView.swift */; };
 		0ECF11F02A630A800063E4AA /* ScrollSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EF2A630A800063E4AA /* ScrollSection.swift */; };
 		3811CD562A34ED4500886CE4 /* BLOOMFINALApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD552A34ED4500886CE4 /* BLOOMFINALApp.swift */; };
@@ -57,6 +62,11 @@
 		0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		0E4DF85C2A391F0B00D07B6E /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
 		0E869C832A390325004DD6C0 /* CreateNewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEvent.swift; sourceTree = "<group>"; };
+		0ECB30F82A676E3B00EBF8CA /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		0ECB31382A68652500EBF8CA /* InterestUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestUI.swift; sourceTree = "<group>"; };
+		0ECB313A2A686D0800EBF8CA /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
+		0ECB313E2A68863A00EBF8CA /* BookingConfirmationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationPage.swift; sourceTree = "<group>"; };
+		0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoEventsDefaultView.swift; sourceTree = "<group>"; };
 		0ECF11EA2A621D860063E4AA /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		0ECF11EF2A630A800063E4AA /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
 		3811CD522A34ED4500886CE4 /* BLOOMFINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLOOMFINAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				38CCC4942A38A02900E350C9 /* EventCardView.swift */,
+				0ECB31382A68652500EBF8CA /* InterestUI.swift */,
 				0ECF11EF2A630A800063E4AA /* ScrollSection.swift */,
 				38E4B77B2A3990740026A487 /* ReusableContentView.swift */,
 				0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */,
@@ -226,11 +237,15 @@
 				0E869C832A390325004DD6C0 /* CreateNewEvent.swift */,
 				38CCC48E2A385D6800E350C9 /* ExploreView.swift */,
 				38CCC4902A385F7400E350C9 /* HostEventView.swift */,
-				38CCC4922A386ACD00E350C9 /* EventContentView.swift */,
+				0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */,
+				0ECB313A2A686D0800EBF8CA /* InterestView.swift */,
 				38E4B7802A39AF010026A487 /* PassesView.swift */,
 				38FECE212A3BA0900060DCAB /* DetailView.swift */,
+				0ECB30F82A676E3B00EBF8CA /* Feedback.swift */,
+				0ECB313E2A68863A00EBF8CA /* BookingConfirmationPage.swift */,
 				38FECE232A3C03DB0060DCAB /* BookEvent.swift */,
 				38E4B7792A3985850026A487 /* SearchEventView.swift */,
+				38CCC4922A386ACD00E350C9 /* EventContentView.swift */,
 				0ECF11EE2A6227130063E4AA /* Profile */,
 			);
 			path = Main;
@@ -335,16 +350,20 @@
 				38FECE222A3BA0900060DCAB /* DetailView.swift in Sources */,
 				38CCC4952A38A02900E350C9 /* EventCardView.swift in Sources */,
 				0ECF11F02A630A800063E4AA /* ScrollSection.swift in Sources */,
+				0ECB31392A68652500EBF8CA /* InterestUI.swift in Sources */,
 				3898F8FD2A3C1E90007F24AA /* DislikeFeedbackView.swift in Sources */,
+				0ECB313B2A686D0800EBF8CA /* InterestView.swift in Sources */,
 				38FECE202A3A9EA40060DCAB /* CustomCorner.swift in Sources */,
 				3898F8F92A3C1E2C007F24AA /* address.swift in Sources */,
 				3898F9012A3C1ECF007F24AA /* AccountDetailView.swift in Sources */,
 				0E4DF85D2A391F0B00D07B6E /* PassView.swift in Sources */,
+				0ECB313F2A68863A00EBF8CA /* BookingConfirmationPage.swift in Sources */,
 				3811CD582A34ED4500886CE4 /* ContentView.swift in Sources */,
 				3811CD812A36E8BC00886CE4 /* RegisterView.swift in Sources */,
 				38CCC4912A385F7400E350C9 /* HostEventView.swift in Sources */,
 				38CCC48F2A385D6800E350C9 /* ExploreView.swift in Sources */,
 				38E4B7872A39C88E0026A487 /* LandingScreen.swift in Sources */,
+				0ECB30F92A676E3B00EBF8CA /* Feedback.swift in Sources */,
 				0ECF11EB2A621D860063E4AA /* SummaryView.swift in Sources */,
 				3811CD832A36E9AF00886CE4 /* Views + Extensions.swift in Sources */,
 				38E4B77C2A3990740026A487 /* ReusableContentView.swift in Sources */,
@@ -353,6 +372,7 @@
 				38CCC4932A386ACD00E350C9 /* EventContentView.swift in Sources */,
 				3811CD862A36F69800886CE4 /* HomeView.swift in Sources */,
 				3811CD7E2A36D0F800886CE4 /* LoadingView.swift in Sources */,
+				0ECB31412A68900500EBF8CA /* NoEventsDefaultView.swift in Sources */,
 				38E4B7832A39B01B0026A487 /* PassData.swift in Sources */,
 				3811CD562A34ED4500886CE4 /* BLOOMFINALApp.swift in Sources */,
 				0E869C842A390325004DD6C0 /* CreateNewEvent.swift in Sources */,
@@ -487,6 +507,7 @@
 				DEVELOPMENT_TEAM = TBCL3BV72X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Bloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -517,6 +538,7 @@
 				DEVELOPMENT_TEAM = TBCL3BV72X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Bloom;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

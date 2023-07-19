@@ -111,7 +111,15 @@ struct ExploreView: View {
     //displaying fetched events
     @ViewBuilder
     func Events() -> some View {
-        ForEach(recentEvents) { event in
+        ForEach(recentEvents.filter({ eve in
+            if activeTag == "All" {
+                return true
+            }
+                else
+            {
+                return eve.category == activeTag
+            }
+        })) { event in
             EventCard(event)
                 .onAppear {
                     if event.id == recentEvents.last?.id && paginationDoc != nil {
@@ -148,7 +156,13 @@ struct ExploreView: View {
                             Text(event.date.formatted(date: .numeric, time: .shortened))
                                 .font(.caption)
                                
-                            
+                            Text(event.category)
+                                .padding(3)
+                                .foregroundColor(Color("background"))
+                                .font(.system(size: 8, weight: .regular))
+                                .background(Color("primary"))
+                                .cornerRadius(45)
+                               
                             Spacer()
                             
                             HStack(spacing: 4){
@@ -208,12 +222,12 @@ struct ExploreView: View {
             //pagination
             if let paginationDoc{
                 query = Firestore.firestore().collection("Events")
-                    .order(by: "date", descending: true)
+                    .order(by: "date", descending: false)
                     .start(afterDocument: paginationDoc)
                     .limit(to: 20)
             }else{
                 query = Firestore.firestore().collection("Events")
-                    .order(by: "date", descending: true)
+                    .order(by: "date", descending: false)
                     .limit(to: 20)
             }
             //query for UID
@@ -222,10 +236,11 @@ struct ExploreView: View {
             //            }
             
             let docs = try await query.getDocuments()
-            
+            print(docs.documents)
             let fetchedEvents = docs.documents.compactMap{ doc -> Event? in
                 try? doc.data(as: Event.self)
             }
+            print(fetchedEvents)
             await MainActor.run(body:{
                 recentEvents.append(contentsOf: fetchedEvents)
                 paginationDoc = docs.documents.last
@@ -239,8 +254,11 @@ struct ExploreView: View {
     
 }
 var tags: [String] = [
-    "All", "Coding", "Pottery", "Gardening", "Cooking", "Wellness", "Exercise", "Dance & Music"
+    "All", "Art", "Pottery", "Gardening", "Cooking", "Wellness", "Techshop", "Other"
 ]
+//var tags: [String] = [
+//    "All", "Coding", "Pottery", "Gardening", "Cooking", "Wellness", "Exercise", "Dance & Music"
+//]
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {

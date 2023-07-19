@@ -22,6 +22,12 @@ struct CreateNewEvent: View {
     @State private var eventVenue: String = ""
     @State private var eventInterests: [String] = []
     @State private var eventTime: Date = Date()
+//    @State private var eventCost : Int = 0
+
+    @State private var eventCost : Double = 0.0
+
+    @State private var category = ""
+    let options = ["Gardening", "Pottery", "Techshop", "Art", "Cooking", "Wellness", "Other"]
     
     //user defaults
     @AppStorage("user_name") var userNameStored: String = ""
@@ -40,9 +46,9 @@ struct CreateNewEvent: View {
     var body: some View {
         VStack{
             HStack{
-                    Button("Cancel", role: .destructive){
-                        dismiss()
-                    }
+                Button("Cancel", role: .destructive){
+                    dismiss()
+                }
                 .hAlign(.leading)
                 Button (action: createEvent){
                     Text("Host")
@@ -72,6 +78,7 @@ struct CreateNewEvent: View {
                                 .aspectRatio (contentMode: .fill)
                                 .frame (width: size.width, height: size.height)
                                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            
                             //delete button
                                 .overlay(alignment: .topTrailing){
                                     Button{
@@ -91,12 +98,24 @@ struct CreateNewEvent: View {
                         .clipped()
                         .frame(height: 220)
                     }
+                    else{
+                        GeometryReader{
+                            let size = $0.size
+                            Image("Image 48")
+                                .resizable ()
+                                .aspectRatio (contentMode: .fill)
+                                .frame (width: size.width, height: size.height)
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        }
+                        .clipped()
+                        .frame(height: 220)
+                    }
                     
                     TextField("Event Name", text: $eventName, axis: .vertical)
                         .border(0.5, .black.opacity(0.2)).focused($showKeyboard)
                     
                     TextField("About the event", text: $eventDesc, axis: .vertical)
-                        .frame(minHeight: 100, alignment: .top)
+                        .frame(minHeight: 80, alignment: .top)
                         .border(0.5, .black.opacity(0.2)).focused($showKeyboard)
                     
                     HStack{
@@ -119,8 +138,36 @@ struct CreateNewEvent: View {
                     //datepicker
                     DatePicker(selection: $eventTime){
                         Text("Event date")
-                        
                     }
+                    
+                    HStack {
+                        Text("Individual Cost : ₹")
+                        
+                        TextField("Cost", value: $eventCost, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                            .border(0.5, .black.opacity(0.2)).focused($showKeyboard)
+                    }
+                    HStack {
+                    Text("Category :")
+                        
+                    TextField("Choose...", text: $category, axis: .vertical)
+                        .border(0.5, .black.opacity(0.2)).focused($showKeyboard)
+                    
+//                    HStack {
+//                        Text("Category :")
+//
+//                        TextField("Choose...", text: $category)
+//                            .border(0.5, .black.opacity(0.2)).focused($showKeyboard)
+//
+//
+                        Picker("", selection: $category) {
+                            ForEach(options, id: \.self) { option in
+                                Text(option)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                    }
+                
                 }
                 .padding()
             }
@@ -176,13 +223,15 @@ struct CreateNewEvent: View {
                     let _ = try await storageRef.putDataAsync(eventImage)
                     let downloadURL = try await storageRef.downloadURL()
                     
-                  //event data without image
-                    let event = Event(name: eventName, imgID:imageReferenceID, imgURL: downloadURL, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
-
+                    //event data without image
+//                    let event = Event(name: eventName, imgID:imageReferenceID, imgURL: downloadURL, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
+                    let event = Event(name: eventName, imgID:imageReferenceID, imgURL: downloadURL, venue: eventVenue, description: eventDesc, date: eventTime, cost: eventCost, category: category, userName: userNameStored, userUID: userUID)
+                    
                     try await createDocumentAtFirebase(event)
                 }else{
                     //without images
-                    let event = Event(name: eventName, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
+//                    let event = Event(name: eventName, venue: eventVenue, description: eventDesc, date: eventTime, userName: userNameStored, userUID: userUID)
+                    let event = Event(name: eventName, venue: eventVenue, description: eventDesc, date: eventTime, cost: eventCost, category: category, userName: userNameStored, userUID: userUID)
                     try await createDocumentAtFirebase(event)
                     
                 }
@@ -218,7 +267,7 @@ struct CreateNewEvent: View {
 struct CreateNewEvent_Previews: PreviewProvider {
     static var previews: some View {
         CreateNewEvent{_ in
-
+            
         }
     }
 }

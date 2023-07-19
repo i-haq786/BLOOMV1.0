@@ -20,4 +20,12 @@ struct PassData: Identifiable {
     let stacks: String
     let personsCount: Int
     let cost: Int
+    
+//    let id = UUID()
+//    var name: String
+//    var imgURL: URL?
+//    var venue: String
+//    var date: Date
+//    var cost: Double
+//    var bookingId: String
 }

@@ -14,6 +14,7 @@ import SDWebImageSwiftUI
 struct HostEventView: View {
     @State private var createNewEvent: Bool = false
     @State private var recentEvents: [Event] = []
+    @State private var filteredRecentEvents: [Event] = []
     @State private var selectedEvent: Event?
     @State private var isFetching: Bool = true
     @State private var paginationDoc: QueryDocumentSnapshot?
@@ -61,6 +62,9 @@ struct HostEventView: View {
     
     @ViewBuilder
     func ReusableContent()->some View{
+        var filteredEvents = recentEvents.filter({ eve in
+            eve.userUID == Auth.auth().currentUser?.uid
+        })
         ScrollView(.vertical, showsIndicators: false){
             LazyVStack{
                 if isFetching{
@@ -68,13 +72,14 @@ struct HostEventView: View {
                         .padding(.top, 30)
                 }
                 else{
-                    if recentEvents.isEmpty{
-                        Text("No events found")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                            .padding()
+                    if filteredEvents.isEmpty{
+                        NoEventsDefaultView()
+//                        Text("No events found")
+//                            .font(.caption)
+//                            .foregroundColor(.gray)
+//                            .padding()
                     }else{
-                        Events()
+                        Events(filteredEvents: filteredEvents)
                     }
                 }
             }
@@ -119,6 +124,15 @@ struct HostEventView: View {
                             
                             Text(event.date.formatted(date: .numeric, time: .shortened))
                                 .font(.caption)
+                            
+                            Text(event.category)
+                                .padding(3)
+                                .foregroundColor(Color("background"))
+                                .font(.system(size: 8, weight: .regular))
+                                .background(Color("primary"))
+                                .cornerRadius(45)
+                               
+
                                
                             
                             Spacer()
@@ -175,28 +189,30 @@ struct HostEventView: View {
     
     //displaying fetched events
     @ViewBuilder
-    func Events()->some View{
-        ForEach(recentEvents) { event in
-            EventCard(event)
-                .onAppear {
-                    if event.id == recentEvents.last?.id && paginationDoc != nil {
-                        Task { await fetchEvents() }
+    func Events( filteredEvents: [Event] )->some View{
+        
+       ForEach(filteredEvents) { event in
+                EventCard(event)
+                    .onAppear {
+                        if event.id == recentEvents.last?.id && paginationDoc != nil {
+                            Task { await fetchEvents() }
+                        }
                     }
-                }
-                .onTapGesture {
-                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                        selectedEvent = event
-                        showDetailsView = true
+                    .onTapGesture {
+                        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                            selectedEvent = event
+                            showDetailsView = true
+                        }
                     }
-                }
-            Divider()
-                .padding(.top, 10)
-                .padding(.bottom, 10)
-        }
+                Divider()
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
+            }
     }
     //fetching events
     func fetchEvents()async{
         do{
+            print("Start")
             var query: Query!
             //pagination
             if let lastDocument = paginationDoc {
@@ -210,10 +226,7 @@ struct HostEventView: View {
                     .limit(to: 20)
             }
             
-            //uid based filter
-            //            if basedOnUID{
-            //                query = query.whereField("userUID", isEqualTo: uid)
-            //            }
+
             
             let docs = try await query.getDocuments()
             
@@ -233,6 +246,7 @@ struct HostEventView: View {
                     isFetching = false
                 }
             }
+           print("DONEEEEEE")
         }catch{
             print(error.localizedDescription)
         }

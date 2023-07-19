@@ -68,11 +68,6 @@ struct RegisterView: View{
                             .padding(.leading, 30)
                     }
                     
-//                    TextField("Username", text: $userName)
-//                        .textContentType(.name)
-//                        .border(1, .black)
-//                        .padding(.top, 25)
-                    
                     ZStack(alignment: .topLeading) {
                         RoundedRectangle(cornerRadius: 14)
                             .stroke(Color("myGray"), lineWidth: 2)
@@ -91,8 +86,7 @@ struct RegisterView: View{
                             .padding(.leading, 30)
                     }
                     
-//                    iPhoneNumberField("Mobile number", text: $phoneNum)
-//                        .border(1, .black)
+
                     
                     ZStack(alignment: .topLeading) {
                         RoundedRectangle(cornerRadius: 14)
@@ -113,9 +107,7 @@ struct RegisterView: View{
                             .autocapitalization(.none)
                     }
                     
-//                    TextField("Email", text: $emailID)
-//                        .textContentType(.emailAddress)
-//                        .border(1, .black)
+
                     
                     ZStack(alignment: .topLeading) {
                         RoundedRectangle(cornerRadius: 14)
@@ -152,10 +144,7 @@ struct RegisterView: View{
                         }
                     }
                     
-//                    SecureField( "Password", text: $password)
-//                        .textContentType (.password )
-//                        .border(1, .black)
-//
+
                     Button(action: registerUser){
                         Text("Sign up")
                             .foregroundColor(.white)

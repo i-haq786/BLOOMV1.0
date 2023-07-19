@@ -39,19 +39,27 @@ struct LandingScreen: View {
                             
                         }.hAlign(.leading)
                         
-                        NavigationLink(destination:ProfileView()){
-                            Button{
-                                
-                            }label: {
+                        NavigationLink{
+                            ProfileView()
+                        }label:
+                            {
                                 Image(systemName: "person.circle.fill")
                                     .font(.largeTitle)
                                     .tint(Color("tab"))
                             }
-                        }
+                        
+//                        NavigationLink(destination:ProfileView()){
+//                            Button{
+//                            }label: {
+//                                Image(systemName: "person.circle.fill")
+//                                    .font(.largeTitle)
+//                                    .tint(Color("tab"))
+//                            }
+//                        }
                     }
                     .padding([.horizontal, .bottom])
                     .opacity(showDetailPage ? 0 : 1)
-                    ZStack{
+                    ZStack(alignment: .top){
                         Image("Image 51")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -84,11 +92,10 @@ struct LandingScreen: View {
                                 
                                 
                             }
-                            //.frame(width: 109)
                             .offset(y: -19)
                             
                             
-                            ScrollSection()
+                            ScrollSection(posters: ["Image 52","Image 53","Image 54","Image 55","Image 56","Image 57"])
                                 .offset(x: -101, y: -10)
                             
                         }
