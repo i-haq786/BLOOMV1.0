@@ -17,6 +17,7 @@ struct DetailView: View {
     @State private var animateContent: Bool = false
     @State private var offsetAnimation: Bool = false
     @State private var isPresented : Bool = false
+    @State private var isPaymentSuccessful = false
     
     var body: some View {
         VStack(spacing: 15){
@@ -147,14 +148,14 @@ struct DetailView: View {
 //                            .foregroundColor (.gray)
 //                    }
                     
-                    //                Button {
-                    //
-                    //                } label: {
-                    //                    Label("Reviews", systemImage: "text.alignleft")
-                    //                        .font (.callout)
-                    //                        .foregroundColor (.gray)
-                    //                }
-                    //                .frame (maxWidth: .infinity)
+//                                    Button {
+//                                       // FeedbackView()
+//                                    } label: {
+//                                        Label("Reviews", systemImage: "text.alignleft")
+//                                            .font (.callout)
+//                                            .foregroundColor (.gray)
+//                                    }
+//                                    .frame (maxWidth: .infinity)
                     
                     Button {
                         shareEvent()
@@ -208,9 +209,10 @@ struct DetailView: View {
                     }
                     .sheet(isPresented: $isPresented)
                         {
-                            SummaryView(event: event!)
+                            SummaryView(event: event!, isPresented: $isPresented, isPaymentSuccessful: $isPaymentSuccessful)
+                                
                         }
-                        
+                        .sheet(isPresented: $isPaymentSuccessful, content: {BookingConfirmationPage()})
                     }
                 }
             }

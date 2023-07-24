@@ -28,7 +28,7 @@ struct BookingConfirmationPage: View {
 //                    .cornerRadius(10)
 //            }
             
-            QRCodeGenerator()
+            //QRCodeGenerator()
                         
             
         }

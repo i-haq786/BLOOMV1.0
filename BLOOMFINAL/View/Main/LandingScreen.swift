@@ -14,6 +14,22 @@ struct LandingScreen: View {
     @State var showDetailPage: Bool = false
     @Namespace var animation
     @State var animateView: Bool = false
+    @State var selectedView: Binding<Int>
+    @State var selectedFilterTagIndex: Binding<Int>
+    
+//    ["Image 52","Image 53","Image 54","Image 55","Image 56","Image 57"]
+//    var tags: [String] = [
+//        "All", "Art", "Pottery", "Gardening", "Cooking", "Wellness", "Techshop", "Other"
+//    ]
+    
+    var posters = [
+        Poster(image: "Image 52", index: 3),
+        Poster(image: "Image 53", index: 1),
+        Poster(image: "Image 54", index: 4),
+        Poster(image: "Image 55", index: 5),
+        Poster(image: "Image 56", index: 2),
+        Poster(image: "Image 57", index: 6),
+    ]
     // @State var animateContent: Bool = false
     // @State var scrollOffset: CGFloat = 0
     
@@ -95,7 +111,7 @@ struct LandingScreen: View {
                             .offset(y: -19)
                             
                             
-                            ScrollSection(posters: ["Image 52","Image 53","Image 54","Image 55","Image 56","Image 57"])
+                            ScrollSection(posters: posters, selectedView: selectedView, selectedFilterTagIndex: selectedFilterTagIndex)
                                 .offset(x: -101, y: -10)
                             
                         }
@@ -284,11 +300,11 @@ struct LandingScreen: View {
     }
 //}
 
-struct LandingScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LandingScreen()
-    }
-}
+//struct LandingScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LandingScreen()
+//    }
+//}
 
 struct ScaledButtonStyle: ButtonStyle{
     func makeBody(configuration: Configuration) -> some View {

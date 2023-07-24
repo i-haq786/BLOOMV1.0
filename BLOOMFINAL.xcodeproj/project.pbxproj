@@ -17,6 +17,9 @@
 		0ECB31412A68900500EBF8CA /* NoEventsDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */; };
 		0ECF11EB2A621D860063E4AA /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EA2A621D860063E4AA /* SummaryView.swift */; };
 		0ECF11F02A630A800063E4AA /* ScrollSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF11EF2A630A800063E4AA /* ScrollSection.swift */; };
+		0ED661B12A69C49F00E819A6 /* Razorpay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED661AF2A69C48400E819A6 /* Razorpay.xcframework */; };
+		0ED661B22A69C49F00E819A6 /* Razorpay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED661AF2A69C48400E819A6 /* Razorpay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0ED661B52A69C60F00E819A6 /* TestPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED661B42A69C60F00E819A6 /* TestPayment.swift */; };
 		3811CD562A34ED4500886CE4 /* BLOOMFINALApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD552A34ED4500886CE4 /* BLOOMFINALApp.swift */; };
 		3811CD582A34ED4500886CE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811CD572A34ED4500886CE4 /* ContentView.swift */; };
 		3811CD5A2A34ED4600886CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3811CD592A34ED4600886CE4 /* Assets.xcassets */; };
@@ -58,6 +61,20 @@
 		38FECE242A3C03DB0060DCAB /* BookEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FECE232A3C03DB0060DCAB /* BookEvent.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0ED661B32A69C49F00E819A6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0ED661B22A69C49F00E819A6 /* Razorpay.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0E4DF8592A391ED600D07B6E /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		0E4DF85C2A391F0B00D07B6E /* PassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassView.swift; sourceTree = "<group>"; };
@@ -69,6 +86,8 @@
 		0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoEventsDefaultView.swift; sourceTree = "<group>"; };
 		0ECF11EA2A621D860063E4AA /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		0ECF11EF2A630A800063E4AA /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
+		0ED661AF2A69C48400E819A6 /* Razorpay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Razorpay.xcframework; sourceTree = "<group>"; };
+		0ED661B42A69C60F00E819A6 /* TestPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPayment.swift; sourceTree = "<group>"; };
 		3811CD522A34ED4500886CE4 /* BLOOMFINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLOOMFINAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811CD552A34ED4500886CE4 /* BLOOMFINALApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLOOMFINALApp.swift; sourceTree = "<group>"; };
 		3811CD572A34ED4500886CE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +131,7 @@
 				38B298112A38C50500F9A559 /* SDWebImageSwiftUI in Frameworks */,
 				3811CD662A3500BC00886CE4 /* FirebaseAuth in Frameworks */,
 				3811CD682A3500BC00886CE4 /* FirebaseFirestore in Frameworks */,
+				0ED661B12A69C49F00E819A6 /* Razorpay.xcframework in Frameworks */,
 				38CCC48D2A37B16300E350C9 /* MapItemPicker in Frameworks */,
 				3811CD732A35AF7400886CE4 /* iPhoneNumberField in Frameworks */,
 				3811CD782A36BE0C00886CE4 /* FirebaseStorage in Frameworks */,
@@ -233,19 +253,21 @@
 			children = (
 				3811CD852A36F69800886CE4 /* HomeView.swift */,
 				38E4B7862A39C88E0026A487 /* LandingScreen.swift */,
-				0ECF11EA2A621D860063E4AA /* SummaryView.swift */,
 				0E869C832A390325004DD6C0 /* CreateNewEvent.swift */,
 				38CCC48E2A385D6800E350C9 /* ExploreView.swift */,
+				38FECE212A3BA0900060DCAB /* DetailView.swift */,
+				0ECF11EA2A621D860063E4AA /* SummaryView.swift */,
+				0ED661B42A69C60F00E819A6 /* TestPayment.swift */,
 				38CCC4902A385F7400E350C9 /* HostEventView.swift */,
 				0ECB31402A68900500EBF8CA /* NoEventsDefaultView.swift */,
 				0ECB313A2A686D0800EBF8CA /* InterestView.swift */,
 				38E4B7802A39AF010026A487 /* PassesView.swift */,
-				38FECE212A3BA0900060DCAB /* DetailView.swift */,
 				0ECB30F82A676E3B00EBF8CA /* Feedback.swift */,
 				0ECB313E2A68863A00EBF8CA /* BookingConfirmationPage.swift */,
 				38FECE232A3C03DB0060DCAB /* BookEvent.swift */,
 				38E4B7792A3985850026A487 /* SearchEventView.swift */,
 				38CCC4922A386ACD00E350C9 /* EventContentView.swift */,
+				0ED661AF2A69C48400E819A6 /* Razorpay.xcframework */,
 				0ECF11EE2A6227130063E4AA /* Profile */,
 			);
 			path = Main;
@@ -261,6 +283,7 @@
 				3811CD4E2A34ED4500886CE4 /* Sources */,
 				3811CD4F2A34ED4500886CE4 /* Frameworks */,
 				3811CD502A34ED4500886CE4 /* Resources */,
+				0ED661B32A69C49F00E819A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,6 +366,7 @@
 				38E4B7812A39AF010026A487 /* PassesView.swift in Sources */,
 				3811CD882A36F94100886CE4 /* ProfileView.swift in Sources */,
 				3811CD702A35022100886CE4 /* LoginView.swift in Sources */,
+				0ED661B52A69C60F00E819A6 /* TestPayment.swift in Sources */,
 				38E4B77A2A3985850026A487 /* SearchEventView.swift in Sources */,
 				3811CD8E2A3715BB00886CE4 /* Event.swift in Sources */,
 				38FECE1E2A3A8FA30060DCAB /* Today.swift in Sources */,
@@ -504,7 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = TBCL3BV72X;
+				DEVELOPMENT_TEAM = 99H99P82BW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bloom;
@@ -535,7 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BLOOMFINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = TBCL3BV72X;
+				DEVELOPMENT_TEAM = 99H99P82BW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Bloom;

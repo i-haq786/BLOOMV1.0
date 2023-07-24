@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("log_status") var logStatus: Bool = false
+    @AppStorage("interest_set") var interestSet: Bool = false
     
     var body: some View {
         //redirecting users based on log status
-        if logStatus{
+        if logStatus, interestSet{
             HomeView()
-        }else{
+        } else if !interestSet{
+            InterestView()
+        }
+        else{
             LoginView()
         }
 //        CreateNewEvent{_ in

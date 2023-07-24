@@ -22,7 +22,7 @@ struct ProfileView: View {
     //    @StateObject private var profileData = ProfileData()
     @State private var isProfileExpanded = false
     @State private var isShowingDislikePopover = false
-    
+    @AppStorage("interest_set") var interestSet: Bool = false
     
     var body: some View {
         
@@ -241,7 +241,9 @@ struct ProfileView: View {
     }
     
     func logout(){
+        
         try? Auth.auth().signOut()
+        interestSet = false
         logStatus = false
     }
     

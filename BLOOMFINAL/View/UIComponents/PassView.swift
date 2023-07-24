@@ -5,12 +5,11 @@
 //  Created by Inzamam on 14/06/23.
 //
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PassView: View {
     let data: PassData
-
-      @State private var poster: Image = Image("Image 44")
-    
+    @State private var poster: Image = Image("Image 44")
 //    @State private var name: String = "Devfest 2022"
 //    @State private var organizer: String = "GDG Chennai"
 //    @State private var time: String = "1:30 PM"
@@ -25,21 +24,24 @@ struct PassView: View {
     
     
     var body: some View {
+       
         ZStack {
             Image("Image 40")
                 .resizable()
                 .scaledToFit()
-               
             
             VStack{
                 
                 HStack {
                     HStack {
-                        data.poster
+                        
+                        WebImage(url: data.imgURL)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 60, height: 60)
                             .clipShape(Circle())
+                            
+                        
                         
                         VStack(alignment: .leading){
                             Text("\(data.name)")
@@ -47,10 +49,10 @@ struct PassView: View {
                                 .font(.system(size: 12))
                                 .fontWeight(.bold)
                             
-                            Text("\(data.organizer)")
-                                .foregroundColor(Color("background"))
-                                .font(.system(size: 12))
-                                .fontWeight(.medium)
+                            //                            Text("\(data.organizer)")
+                            //                                .foregroundColor(Color("background"))
+                            //                                .font(.system(size: 12))
+                            //                                .fontWeight(.medium)
                         }
                         .frame(width: 100, height: 70)
                     }
@@ -62,12 +64,12 @@ struct PassView: View {
                     HStack {
                         
                         VStack(alignment: .center){
-                            Text("\(data.time)")
-                                .foregroundColor(Color("background"))
-                                .font(.system(size: 12))
-                                .fontWeight(.medium)
+                            Text("\(data.date.formatted(Date.FormatStyle().hour(.defaultDigits(amPM: .abbreviated)).minute()))")
+                                                            .foregroundColor(Color("background"))
+                                                            .font(.system(size: 12))
+                                                            .fontWeight(.medium)
                             
-                            Text("\(data.day)")
+                            Text("\(data.date.formatted(Date.FormatStyle().day().month().year()))")
                                 .foregroundColor(Color("background"))
                                 .font(.system(size: 12))
                                 .fontWeight(.medium)
@@ -94,14 +96,14 @@ struct PassView: View {
                             .fontWeight(.regular)
                         Spacer()
                         
-                        Text("\(data.topicName)")
-                            .foregroundColor(Color("background"))
-                            .font(.system(size: 12))
-                            .fontWeight(.bold)
-                        Text("(\(data.stacks))")
-                            .foregroundColor(Color("background"))
-                            .font(.system(size: 12))
-                            .fontWeight(.regular)
+                        //                        Text("\(data.topicName)")
+                        //                            .foregroundColor(Color("background"))
+                        //                            .font(.system(size: 12))
+                        //                            .fontWeight(.bold)
+                        //                        Text("(\(data.stacks))")
+                        //                            .foregroundColor(Color("background"))
+                        //                            .font(.system(size: 12))
+                        //                            .fontWeight(.regular)
                         
                         Spacer()
                         
@@ -124,12 +126,12 @@ struct PassView: View {
                     } .frame(width: 220, height: 190)
                     
                     VStack {
-                        QRCodeGenerator(eventName: data.name, eventDate: data.day, eventTime: data.time, personsCount: data.personsCount)
-                        
-                        Text("\(data.personsCount) Person(s)")
-                            .foregroundColor(Color("background"))
-                            .font(.system(size: 12))
-                            .fontWeight(.bold)
+                        //                        QRCodeGenerator(eventName: data.name, eventDate: data.date)
+                        //
+                        //                        Text("\(data.personsCount) Person(s)")
+                        //                            .foregroundColor(Color("background"))
+                        //                            .font(.system(size: 12))
+                        //                            .fontWeight(.bold)
                         Text("Rs. \(data.cost)")
                             .foregroundColor(Color("background"))
                             .font(.system(size: 12))
@@ -137,9 +139,8 @@ struct PassView: View {
                     }
                 }
             }.padding(10)
-            .frame(width: 320, height: 290)
-            
-        }
+                .frame(width: 320, height: 290)
+    }
     }
 }
 //

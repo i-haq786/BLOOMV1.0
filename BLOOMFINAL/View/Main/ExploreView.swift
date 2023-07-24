@@ -12,7 +12,7 @@ import SDWebImageSwiftUI
 struct ExploreView: View {
     
     @State private var recentEvents: [Event] = []
-    @State private var activeTag: String = "All"
+    var activeTagIndex: Binding<Int>
     @Namespace private var animation
     @State private var selectedEvent: Event?
     @State private var events: Event?
@@ -47,12 +47,12 @@ struct ExploreView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
                 ForEach(tags, id: \.self) { tag in
-                    Text (tag)
+                    Text(tag)
                         .font(.caption)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 6)
                         .background{
-                            if activeTag == tag {
+                            if tags.firstIndex(of: tag) == activeTagIndex.wrappedValue {
                                 Capsule ()
                                     .fill(Color("tab"))
                                     .matchedGeometryEffect(id: "ACTIVETAB" ,in: animation)
@@ -61,10 +61,10 @@ struct ExploreView: View {
                                     .fill(.ultraThinMaterial)
                             }
                         }
-                        .foregroundColor (activeTag == tag ? Color("otab") : Color("tab"))
+                        .foregroundColor (tags.firstIndex(of: tag) == activeTagIndex.wrappedValue ? Color("otab") : Color("tab"))
                         .onTapGesture {
                             withAnimation(.interactiveSpring (response: 0.5, dampingFraction: 0.7, blendDuration: 0.7)) {
-                                activeTag = tag
+                                activeTagIndex.wrappedValue = tags.firstIndex(of: tag)!
                             }
                         }
                 }
@@ -102,7 +102,7 @@ struct ExploreView: View {
             await fetchEvents()
         }
         .task{
-            guard recentEvents.isEmpty else{return}
+            guard recentEvents.isEmpty else { return }
             await fetchEvents()
         }
         
@@ -112,12 +112,12 @@ struct ExploreView: View {
     @ViewBuilder
     func Events() -> some View {
         ForEach(recentEvents.filter({ eve in
-            if activeTag == "All" {
+            if tags[activeTagIndex.wrappedValue] == "All" {
                 return true
             }
                 else
             {
-                return eve.category == activeTag
+                    return eve.category == tags[activeTagIndex.wrappedValue]
             }
         })) { event in
             EventCard(event)
@@ -261,7 +261,8 @@ var tags: [String] = [
 //]
 
 struct ExploreView_Previews: PreviewProvider {
+    @State static var index = 0
     static var previews: some View {
-        ExploreView()
+        ExploreView(activeTagIndex: $index)
     }
 }

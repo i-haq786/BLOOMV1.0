@@ -212,7 +212,7 @@ struct HostEventView: View {
     //fetching events
     func fetchEvents()async{
         do{
-            print("Start")
+//            print("Start")
             var query: Query!
             //pagination
             if let lastDocument = paginationDoc {
@@ -246,7 +246,7 @@ struct HostEventView: View {
                     isFetching = false
                 }
             }
-           print("DONEEEEEE")
+//           print("DONEEEEEE")
         }catch{
             print(error.localizedDescription)
         }

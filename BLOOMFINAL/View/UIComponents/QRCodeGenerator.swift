@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct QRCodeGenerator: View {
-    @State var eventName = "Devfest"
-    @State var eventDate = "30-06-23"
-    @State var eventTime = "11:05pm"
-    @State var personsCount = 1
+    @State var eventName : String
+    @State var eventDate : Date
+    
     var body: some View {
         HStack{
             
             if eventName != ""{
-                Image(uiImage: UIImage(data: returnData(planUrl: "\(eventName)- \(eventDate)-\(eventTime)-\(personsCount) Person"))!)
+                Image(uiImage: UIImage(data: returnData(planUrl: "\(eventName)- \(eventDate.formatted())" ))!)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 100)
@@ -42,12 +41,13 @@ struct QRCodeGenerator: View {
             context?.draw(cgImage, in: context!.boundingBoxOfClipPath)
             let uiImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
+        
             return uiImage?.pngData() ?? Data()
         }
 }
 
-struct QRCodeGenerator_Previews: PreviewProvider {
-    static var previews: some View {
-        QRCodeGenerator()
-    }
-}
+//struct QRCodeGenerator_Previews: PreviewProvider {
+//    static var previews: some View {
+//        QRCodeGenerator()
+//    }
+//}

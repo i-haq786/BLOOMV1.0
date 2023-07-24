@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+import FirebaseAuth
+import FirebaseFirestore
+
 struct InterestView: View {
+    @State private var selectedInterests: [String] = []
+    @AppStorage("interest_set") var interestSet: Bool = false
+    
     var body: some View {
         ZStack(alignment: .leading) {
             Color("highlight")
@@ -60,17 +66,24 @@ struct InterestView: View {
                             .font(.callout)
                             .foregroundColor(Color("background"))
                         
-                        InterestUI()
+                        InterestUI(selectedInterests: selectedInterests)
                             .frame(width: 330)
                     }.offset(x: 20, y: 40)
                 
                 HStack {
-                    
                     Button(action: {
-                               // Button action handling
-                               print("Image button tapped")
+                        do {
+                            
+                            Task {
+                                guard let userUID = Auth.auth().currentUser?.uid else{return}
+                                try await Firestore.firestore().collection("Users").document(userUID).setData(["interests": selectedInterests])
+                            }
+                            interestSet = true
+                        } catch {
+                            print(error)
+                        }
                            }) {
-                               Image("Image 9") // Replace "imageName" with the actual name of your image asset
+                               Image("Image 9")
                                    .resizable()
                                    .frame(width: 55, height: 50)
                                    .cornerRadius(10)

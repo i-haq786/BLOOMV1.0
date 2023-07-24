@@ -9,7 +9,7 @@ import SwiftUI
 struct InterestUI: View {
     let interests: [String] = ["Gardening", "Pottery", "Techshop", "Art", "Cooking", "Wellness", "Other"]
     
-    @State private var selectedInterests: [String] = []
+    @State var selectedInterests: [String]
     
     let columns = [
         GridItem(.flexible()),
@@ -33,24 +33,28 @@ struct InterestUI: View {
                             .font(.system(size: 12))
                             .frame(width: 70, height: 25)
                             .padding(5)
-                            .background(selectedInterests.contains(interest) ? Color("highlight") : Color("accent"))
+                            .background(selectedInterests.contains(interest) ? Color("accent") : Color("highlight"))
                             .foregroundColor(Color("background"))
                             .cornerRadius(35)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 35)
+                                    .stroke(Color("accent"), lineWidth: 1)
+                            )
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
                 
-//                Button(action: {
-//                    // Submit action
-//                    print("Selected interests: \(selectedInterests)")
-//                }) {
-//                    Text("Submit")
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                }
-//                .buttonStyle(PlainButtonStyle())
+                //                Button(action: {
+                //                    // Submit action
+                //                    print("Selected interests: \(selectedInterests)")
+                //                }) {
+                //                    Text("Submit")
+                //                        .padding()
+                //                        .background(Color.blue)
+                //                        .foregroundColor(.white)
+                //                        .cornerRadius(10)
+                //                }
+                //                .buttonStyle(PlainButtonStyle())
                 
             }
             .padding()
@@ -58,8 +62,8 @@ struct InterestUI: View {
     }
 }
 
-struct InterestUI_Previews: PreviewProvider {
-    static var previews: some View {
-        InterestUI()
-    }
-}
+//struct InterestUI_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InterestUI()
+//    }
+//}
